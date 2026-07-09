@@ -10,16 +10,12 @@ PlayTonight is the ultimate tool for PC gaming squads. Instead of manually compa
 - **Squad RPG Badges**: Automatically analyzes playtime data to assign funny badges to your friends (The Tryhard, The Casual, The Collector, The One-Trick).
 - **Export to Share**: Generates a sleek, social-media-ready PNG image of your squad's dashboard to share on Discord or Twitter.
 
-## 🛠️ Getting Started
+## 🌐 Live App
 
-1. Clone this repository
-2. Install dependencies with `npm install`
-3. Create a `.env.local` file and add your Steam Web API Key:
-   ```env
-   STEAM_API_KEY=your_key_here
-   ```
-4. Run the development server: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application is deployed and ready to use!
+**Play now at:** [https://play-tonight.vercel.app/](https://play-tonight.vercel.app/)
+
+*Note: This repository is private to protect the source code.*
 
 ## ⚙️ Tech Stack
 
