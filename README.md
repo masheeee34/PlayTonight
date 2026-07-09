@@ -1,7 +1,7 @@
 # PlayTonight
 
 <p align="center">
-  <img src="screenshot.png" alt="PlayTonight Dashboard" width="800"/>
+  <img src="public/screenshot.png" alt="PlayTonight Dashboard" width="800"/>
 </p>
 
 PlayTonight is the ultimate tool for PC gaming squads. Instead of manually comparing Steam libraries to figure out what to play, just enter your squad's Steam profiles and let the tool do the magic.
