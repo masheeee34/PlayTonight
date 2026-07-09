@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import html2canvas from 'html2canvas';
+
 import {
   Plus,
   Trash2,
@@ -56,11 +56,16 @@ function PlayTonightAppContent() {
   const handleExportImage = async () => {
     const dashboard = document.getElementById('export-dashboard');
     if (!dashboard) return;
-    const canvas = await html2canvas(dashboard, { backgroundColor: '#f0f1f4', scale: 2 });
-    const link = document.createElement('a');
-    link.download = 'squad-summary.png';
-    link.href = canvas.toDataURL();
-    link.click();
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      const canvas = await html2canvas(dashboard, { backgroundColor: '#f0f1f4', scale: 2 });
+      const link = document.createElement('a');
+      link.download = 'squad-summary.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    } catch (err) {
+      console.error('Error capturing image:', err);
+    }
   };
 
   
@@ -178,7 +183,7 @@ function PlayTonightAppContent() {
       }
     } catch (err: any) {
       console.error(err);
-      setError({ message: 'Impossible de contacter le serveur. Vérifiez votre connexion.' });
+      setError({ message: 'Unable to contact the server. Please check your connection.' });
     } finally {
       setIsLoading(false);
     }
@@ -565,7 +570,7 @@ function PlayTonightAppContent() {
                  {results.missingLinkGames && results.missingLinkGames.length > 0 && (
                    <div className="bg-white rounded-[32px] p-6 shadow-sm border-l-4 border-l-[#6366f1] relative overflow-hidden">
                      <div className="flex justify-between items-center mb-2">
-                        <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2">Le Maillon Faible</h3>
+                        <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2">The Missing Link</h3>
                         {results.missingLinkGames[0].price && (
                            <span className="bg-[#818cf8]/10 text-[#6366f1] px-3 py-1 rounded-xl text-sm font-black border border-[#818cf8]/20">
                              {results.missingLinkGames[0].price.final_formatted}
@@ -573,13 +578,13 @@ function PlayTonightAppContent() {
                         )}
                      </div>
                      <p className="text-sm font-medium text-gray-500 mb-4">
-                       Si <b>{results.missingLinkGames[0].missingUsers[0].displayName}</b> achète ce jeu, vous pourrez tous jouer ensemble ce soir ! Mettez-lui la pression.
+                       If <b>{results.missingLinkGames[0].missingUsers[0].displayName}</b> buys this game, you can all play together tonight! Pressure them.
                      </p>
                      <div className="flex items-center gap-4 bg-gray-50 p-3 rounded-2xl">
                         <img src={results.missingLinkGames[0].coverUrl} className="w-16 h-8 object-cover rounded-lg shadow-sm" />
                         <span className="font-bold text-gray-800 text-sm flex-1">{results.missingLinkGames[0].name}</span>
                         <a href={`steam://store/${results.missingLinkGames[0].appId}`} className="bg-[#0f172a] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-black transition-colors">
-                          Ouvrir Steam
+                          Open Steam
                         </a>
                      </div>
                    </div>
@@ -587,15 +592,15 @@ function PlayTonightAppContent() {
 
                  {results.remotePlayGames && results.remotePlayGames.length > 0 && (
                    <div className="bg-white rounded-[32px] p-6 shadow-sm border-l-4 border-l-emerald-400 relative overflow-hidden">
-                     <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2 mb-2">Hack "Remote Play"</h3>
+                     <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2 mb-2">Remote Play Hack</h3>
                      <p className="text-sm font-medium text-gray-500 mb-4">
-                       C'est gratuit ! Il suffit qu'<b>une seule personne</b> lance ce jeu pour inviter toute la Squad gratuitement.
+                       It's free! Only <b>one person</b> needs to launch this game to invite the whole Squad for free.
                      </p>
                      <div className="flex items-center gap-4 bg-emerald-50 p-3 rounded-2xl">
                         <img src={results.remotePlayGames[0].coverUrl} className="w-16 h-8 object-cover rounded-lg shadow-sm" />
                         <span className="font-bold text-gray-800 text-sm flex-1">{results.remotePlayGames[0].name}</span>
                         <a href={`steam://run/${results.remotePlayGames[0].appId}`} className="bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-emerald-600 transition-colors">
-                          Lancer
+                          Launch
                         </a>
                      </div>
                    </div>

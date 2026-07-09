@@ -94,7 +94,7 @@ export async function resolveSteamProfile(input: string): Promise<SteamUser> {
 
   const parsed = parseSteamInput(input);
   if (parsed.type === 'unknown') {
-    throw new Error(`Le format du profil "${input}" n'est pas reconnu.`);
+    throw new Error(`The profile format "${input}" is not recognized.`);
   }
 
   let steamId = parsed.value;
@@ -104,14 +104,14 @@ export async function resolveSteamProfile(input: string): Promise<SteamUser> {
     const vanityUrl = `http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${STEAM_API_KEY}&vanityurl=${parsed.value}`;
     const res = await fetch(vanityUrl);
     if (!res.ok) {
-      throw new Error(`Erreur lors de la communication avec l'API Steam pour résoudre "${parsed.value}".`);
+      throw new Error(`Error communicating with Steam API to resolve "${parsed.value}".`);
     }
 
     const data = await res.json();
     if (data?.response?.success === 1) {
       steamId = data.response.steamid;
     } else {
-      throw new Error(`Le profil Steam "${parsed.value}" est introuvable.`);
+      throw new Error(`The Steam profile "${parsed.value}" cannot be found.`);
     }
   }
 
@@ -119,14 +119,14 @@ export async function resolveSteamProfile(input: string): Promise<SteamUser> {
   const playerSummaryUrl = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${STEAM_API_KEY}&steamids=${steamId}`;
   const resSummary = await fetch(playerSummaryUrl);
   if (!resSummary.ok) {
-    throw new Error(`Impossible de récupérer les détails du profil pour ${steamId}.`);
+    throw new Error(`Unable to fetch profile details for ${steamId}.`);
   }
 
   const summaryData = await resSummary.json();
   const player = summaryData?.response?.players?.[0];
 
   if (!player) {
-    throw new Error(`Aucun joueur trouvé avec l'identifiant Steam : ${steamId}.`);
+    throw new Error(`No player found with Steam ID : ${steamId}.`);
   }
 
   // communityvisibilitystate: 3 means Public, anything else means Private/Friends only
@@ -154,7 +154,7 @@ export async function getOwnedGames(steamId: string): Promise<OwnedGame[]> {
   
   const res = await fetch(ownedGamesUrl);
   if (!res.ok) {
-    throw new Error(`Erreur lors de la récupération des jeux du joueur ${steamId}.`);
+    throw new Error(`Error fetching games for player ${steamId}.`);
   }
 
   const data = await res.json();

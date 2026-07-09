@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     if (!profiles || !Array.isArray(profiles) || profiles.length < 2 || profiles.length > 5) {
       return NextResponse.json(
-        { error: 'Veuillez fournir entre 2 et 5 profils Steam.', type: 'invalid_inputs' },
+        { error: 'Please provide between 2 and 5 Steam profiles.', type: 'invalid_inputs' },
         { status: 400 }
       );
     }
@@ -26,14 +26,14 @@ export async function POST(request: Request) {
     const users: SteamUser[] = [];
     for (const profile of profiles) {
       if (!profile.trim()) {
-        return NextResponse.json({ error: 'Un des profils saisis est vide.', type: 'invalid_inputs' }, { status: 400 });
+        return NextResponse.json({ error: 'One of the provided profiles is empty.', type: 'invalid_inputs' }, { status: 400 });
       }
       try {
         const user = await resolveSteamProfile(profile);
         users.push(user);
       } catch (err: any) {
         return NextResponse.json(
-          { error: `Impossible de résoudre le profil "${profile}" : ${err.message || err}`, type: 'resolve_error', profile },
+          { error: `Unable to resolve profile "${profile}" : ${err.message || err}`, type: 'resolve_error', profile },
           { status: 400 }
         );
       }
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     const uniqueIds = new Set(users.map((u) => u.steamId));
     if (uniqueIds.size !== users.length) {
       return NextResponse.json(
-        { error: 'Veuillez saisir des profils différents. Les doublons ne sont pas autorisés.', type: 'duplicate_profiles' },
+        { error: 'Please enter different profiles. Duplicates are not allowed.', type: 'duplicate_profiles' },
         { status: 400 }
       );
     }
@@ -67,12 +67,12 @@ export async function POST(request: Request) {
       } catch (err: any) {
         if (err.message === 'private_profile' || user.isPrivate) {
           return NextResponse.json(
-            { error: `Le profil de "${user.displayName}" est privé.`, type: 'private_profile', username: user.displayName },
+            { error: `The profile of "${user.displayName}" is private.`, type: 'private_profile', username: user.displayName },
             { status: 400 }
           );
         }
         return NextResponse.json(
-          { error: `Erreur lors de la récupération des jeux pour "${user.displayName}"`, type: 'api_error', username: user.displayName },
+          { error: `Error fetching games for "${user.displayName}"`, type: 'api_error', username: user.displayName },
           { status: 500 }
         );
       }
@@ -185,14 +185,14 @@ export async function POST(request: Request) {
       }
     }
 
-    if (tryhardId) badges[tryhardId] = "Le Tryhard";
-    if (casualId && casualId !== tryhardId) badges[casualId] = "Le Casual";
-    if (collectorId && !badges[collectorId]) badges[collectorId] = "Le Collectionneur";
-    if (oneTrickId && !badges[oneTrickId]) badges[oneTrickId] = "Le One-Trick";
+    if (tryhardId) badges[tryhardId] = "The Tryhard";
+    if (casualId && casualId !== tryhardId) badges[casualId] = "The Casual";
+    if (collectorId && !badges[collectorId]) badges[collectorId] = "The Collector";
+    if (oneTrickId && !badges[oneTrickId]) badges[oneTrickId] = "The One-Trick";
 
     // Fallback for others
     for (const user of users) {
-       if (!badges[user.steamId]) badges[user.steamId] = "Le Polyvalent";
+       if (!badges[user.steamId]) badges[user.steamId] = "The Versatile";
     }
 
     return NextResponse.json({
@@ -207,7 +207,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error('API /api/games error:', error);
     return NextResponse.json(
-      { error: `Une erreur interne est survenue : ${error.message || error}`, type: 'internal_error' },
+      { error: `An internal error occurred: ${error.message || error}`, type: 'internal_error' },
       { status: 500 }
     );
   }

@@ -1,42 +1,30 @@
 # PlayTonight
 
-PlayTonight is a fast and simple utility to find common multiplayer games among a group of friends on Steam. No more asking "what do you guys have installed?" for an hour in Discord.
+PlayTonight is the ultimate tool for PC gaming squads. Instead of manually comparing Steam libraries to figure out what to play, just enter your squad's Steam profiles and let the tool do the magic.
 
-## Features
+## 🚀 Features
 
-- **Instant Game Matching**: Enter up to 5 Steam profiles or URLs to instantly see which games you all own.
-- **Pile of Shame**: See how many games your group owns collectively but has never played.
-- **Top Player Stats**: Discover who has the most playtime and who is the biggest "carry" in specific games.
-- **Discord Integration**: Generate an instant text summary to copy-paste into your Discord server and rally the squad.
+- **Instant Multiplayer Filtering**: Analyzes up to 5 Steam profiles and instantly finds games you ALL own that have multiplayer/co-op tags.
+- **The Missing Link**: Identifies highly-rated games that *almost* everyone in your squad owns (N-1), and displays the real-time Steam Store price so you can pressure the last person into buying it.
+- **Remote Play Hack**: Highlights games owned by at least one person that support "Remote Play Together", meaning the rest of the squad can join for free.
+- **Squad RPG Badges**: Automatically analyzes playtime data to assign funny badges to your friends (The Tryhard, The Casual, The Collector, The One-Trick).
+- **Export to Share**: Generates a sleek, social-media-ready PNG image of your squad's dashboard to share on Discord or Twitter.
 
-## Screenshots
-
-*(To be added: Drop a screenshot of the main dashboard here)*
-
-*(To be added: Drop a screenshot of the game collection grid here)*
-
-## Getting Started
+## 🛠️ Getting Started
 
 1. Clone this repository
 2. Install dependencies with `npm install`
 3. Create a `.env.local` file and add your Steam Web API Key:
-   ```
+   ```env
    STEAM_API_KEY=your_key_here
    ```
 4. Run the development server: `npm run dev`
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Tech Stack
+## ⚙️ Tech Stack
 
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS v4
+- Framer Motion
 - Steam Web API
-
-## Contributing
-
-Contributions, issues and feature requests are welcome. Feel free to check issues page if you want to contribute.
-
-## License
-
-This project is licensed under the MIT License.
