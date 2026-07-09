@@ -1,0 +1,177 @@
+{
+  "10": {
+    "appId": 10,
+    "name": "Counter-Strike",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en écran partagé",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Option clavier uniquement",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614905474
+  },
+  "80": {
+    "appId": 80,
+    "name": "Counter-Strike: Condition Zero",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614905934
+  },
+  "100": {
+    "appId": 100,
+    "name": "Counter-Strike: Condition Zero Deleted Scenes",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614906362
+  },
+  "730": {
+    "appId": 730,
+    "name": "Counter-Strike 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Multijoueur multiplateforme",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Achats en jeu",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Son multicanal",
+      "Antitriche Valve activée",
+      "Statistiques",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Timeline Steam"
+    ],
+    "lastUpdated": 1783614906786
+  },
+  "108600": {
+    "appId": 108600,
+    "name": "Project Zomboid",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop locale et écran partagé",
+      "Écran partagé",
+      "Multijoueur multiplateforme",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614907199
+  },
+  "431960": {
+    "appId": 431960,
+    "name": "Wallpaper Engine",
+    "isMultiplayer": false,
+    "categories": [
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Workshop Steam",
+      "Éditeur de niveau inclus"
+    ],
+    "lastUpdated": 1783614907649
+  },
+  "440900": {
+    "appId": 440900,
+    "name": "Conan Exiles Enhanced",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614908085
+  },
+  "931180": {
+    "appId": 931180,
+    "name": "Conan Exiles - Public Beta Client",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Compat. contrôleurs complète",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614908521
+  },
+  "1422450": {
+    "appId": 1422450,
+    "name": "Deadlock",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur"
+    ],
+    "lastUpdated": 1783614908946
+  },
+  "2567870": {
+    "appId": 2567870,
+    "name": "Chained Together",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop locale et écran partagé",
+      "Écran partagé",
+      "Compat. contrôleurs partielle",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783614909366
+  }
+}
