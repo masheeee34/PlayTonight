@@ -26,22 +26,14 @@ export async function POST(request: Request) {
     const users: SteamUser[] = [];
     for (const profile of profiles) {
       if (!profile.trim()) {
-        return NextResponse.json(
-          { error: 'Un des profils saisis est vide.', type: 'invalid_inputs' },
-          { status: 400 }
-        );
+        return NextResponse.json({ error: 'Un des profils saisis est vide.', type: 'invalid_inputs' }, { status: 400 });
       }
-
       try {
         const user = await resolveSteamProfile(profile);
         users.push(user);
       } catch (err: any) {
         return NextResponse.json(
-          {
-            error: `Impossible de résoudre le profil "${profile}" : ${err.message || err}`,
-            type: 'resolve_error',
-            profile
-          },
+          { error: `Impossible de résoudre le profil "${profile}" : ${err.message || err}`, type: 'resolve_error', profile },
           { status: 400 }
         );
       }
@@ -56,108 +48,161 @@ export async function POST(request: Request) {
       );
     }
 
-    // 2. Retrieve owned games for each resolved user
+    // 2. Retrieve owned games
     const userGamesMap: Record<string, OwnedGame[]> = {};
+    const globalPlaytimes: Record<number, number> = {};
+    const gameOwnersCount: Record<number, number> = {};
+    const gameDetails: Record<number, { name: string; imgIconUrl?: string }> = {};
+
     for (const user of users) {
       try {
         const games = await getOwnedGames(user.steamId);
         userGamesMap[user.steamId] = games;
+        
+        for (const g of games) {
+          globalPlaytimes[g.appId] = (globalPlaytimes[g.appId] || 0) + g.playtimeForever;
+          gameOwnersCount[g.appId] = (gameOwnersCount[g.appId] || 0) + 1;
+          if (!gameDetails[g.appId]) gameDetails[g.appId] = { name: g.name, imgIconUrl: g.imgIconUrl };
+        }
       } catch (err: any) {
         if (err.message === 'private_profile' || user.isPrivate) {
           return NextResponse.json(
-            {
-              error: `Le profil de "${user.displayName}" est privé ou ses détails de jeux sont cachés. Demandez-lui de rendre ses détails de jeux publics dans ses paramètres Steam (Profil > Modifier le profil > Paramètres de confidentialité).`,
-              type: 'private_profile',
-              username: user.displayName
-            },
+            { error: `Le profil de "${user.displayName}" est privé.`, type: 'private_profile', username: user.displayName },
             { status: 400 }
           );
         }
         return NextResponse.json(
-          {
-            error: `Erreur lors de la récupération des jeux pour "${user.displayName}" : ${err.message || err}`,
-            type: 'api_error',
-            username: user.displayName
-          },
+          { error: `Erreur lors de la récupération des jeux pour "${user.displayName}"`, type: 'api_error', username: user.displayName },
           { status: 500 }
         );
       }
     }
 
-    // 3. Intersect games libraries
-    const firstUserGames = userGamesMap[users[0].steamId];
-    const firstUserGameIds = new Set(firstUserGames.map((g) => g.appId));
+    // 3. Categorize Games
     const commonAppIds = new Set<number>();
+    const missingLinkAppIds = new Set<number>();
+    const potentialRemotePlayAppIds = new Set<number>();
 
-    for (const appId of firstUserGameIds) {
-      let ownedByAll = true;
-      for (let i = 1; i < users.length; i++) {
-        const userGames = userGamesMap[users[i].steamId];
-        const ownsGame = userGames.some((g) => g.appId === appId);
-        if (!ownsGame) {
-          ownedByAll = false;
-          break;
-        }
-      }
-      if (ownedByAll) {
+    const allAppIds = Object.keys(gameOwnersCount).map(Number);
+    // Sort all games by global playtime descending to prioritize the best games
+    allAppIds.sort((a, b) => globalPlaytimes[b] - globalPlaytimes[a]);
+
+    // We will only query Steam API for top 100 games to avoid rate limits
+    const topGamesToQuery = allAppIds.slice(0, 100);
+
+    for (const appId of topGamesToQuery) {
+      const count = gameOwnersCount[appId];
+      if (count === users.length) {
         commonAppIds.add(appId);
+      } else if (count === users.length - 1) {
+        missingLinkAppIds.add(appId);
+      } else if (count >= 1) {
+        potentialRemotePlayAppIds.add(appId);
       }
     }
 
-    // Map common app IDs back to their details (using first user's list as source of names)
-    const commonGamesList: { appId: number; name: string }[] = [];
-    for (const appId of commonAppIds) {
-      const g = firstUserGames.find((game) => game.appId === appId);
-      if (g) {
-        commonGamesList.push({ appId, name: g.name });
-      }
-    }
+    const gamesToQueryList = topGamesToQuery.map(appId => ({ appId, name: gameDetails[appId].name }));
+    const filterResults = await filterMultiplayerGames(gamesToQueryList);
 
-    if (commonGamesList.length === 0) {
-      return NextResponse.json({
-        users,
-        games: []
-      });
-    }
-
-    // 4. Filter intersection list to keep only multiplayer games
-    // Note: filterMultiplayerGames takes care of cache + sequential store details lookup
-    const filterResults = await filterMultiplayerGames(commonGamesList);
-    
     const gamesResult: FilteredGameResult[] = [];
-    for (const game of commonGamesList) {
+    const missingLinkGames: (FilteredGameResult & { price?: any, missingUsers: SteamUser[] })[] = [];
+    const remotePlayGames: FilteredGameResult[] = [];
+
+    for (const game of gamesToQueryList) {
       const filterInfo = filterResults.get(game.appId);
       if (filterInfo && filterInfo.isMultiplayer) {
         const playtimes: Record<string, number> = {};
+        const owners: string[] = [];
+        const missingUsers: SteamUser[] = [];
         
-        // Collate playtimes for each user
         for (const user of users) {
           const uGame = userGamesMap[user.steamId].find((g) => g.appId === game.appId);
           playtimes[user.steamId] = uGame ? uGame.playtimeForever : 0;
+          if (uGame) owners.push(user.steamId);
+          else missingUsers.push(user);
         }
 
-        gamesResult.push({
+        const gameObj = {
           appId: game.appId,
           name: game.name,
           coverUrl: `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${game.appId}/header.jpg`,
           categories: filterInfo.categories,
           playtimes,
-          owners: users.map((u) => u.steamId)
-        });
+          owners
+        };
+
+        if (commonAppIds.has(game.appId)) {
+          gamesResult.push(gameObj);
+        } else if (missingLinkAppIds.has(game.appId)) {
+          missingLinkGames.push({ ...gameObj, price: filterInfo.price, missingUsers });
+        } else if (potentialRemotePlayAppIds.has(game.appId) && filterInfo.categories.includes('Remote Play Together')) {
+          remotePlayGames.push(gameObj);
+        }
       }
     }
 
-    // 5. Sort games by total squad playtime (descending)
+    // If a missing link game has Remote Play, put it in Remote Play too!
+    for (const g of missingLinkGames) {
+       if (g.categories.includes('Remote Play Together') && !remotePlayGames.some(rg => rg.appId === g.appId)) {
+           remotePlayGames.push({
+               appId: g.appId, name: g.name, coverUrl: g.coverUrl, categories: g.categories, playtimes: g.playtimes, owners: g.owners
+           });
+       }
+    }
+
     gamesResult.sort((a, b) => {
-      const totalPlaytimeA = Object.values(a.playtimes).reduce((sum, current) => sum + current, 0);
-      const totalPlaytimeB = Object.values(b.playtimes).reduce((sum, current) => sum + current, 0);
-      return totalPlaytimeB - totalPlaytimeA;
+      const tA = Object.values(a.playtimes).reduce((s, c) => s + c, 0);
+      const tB = Object.values(b.playtimes).reduce((s, c) => s + c, 0);
+      return tB - tA;
     });
+
+    
+    // Calculate RPG Badges
+    const badges: Record<string, string> = {};
+    let maxPlaytime = 0;
+    let minPlaytime = Infinity;
+    let maxGames = 0;
+    let maxOneTrickRatio = 0;
+
+    let tryhardId = '';
+    let casualId = '';
+    let collectorId = '';
+    let oneTrickId = '';
+
+    for (const user of users) {
+      const games = userGamesMap[user.steamId] || [];
+      const totalPlaytime = games.reduce((sum, g) => sum + g.playtimeForever, 0);
+      const totalGames = games.length;
+
+      if (totalPlaytime > maxPlaytime) { maxPlaytime = totalPlaytime; tryhardId = user.steamId; }
+      if (totalPlaytime < minPlaytime) { minPlaytime = totalPlaytime; casualId = user.steamId; }
+      if (totalGames > maxGames) { maxGames = totalGames; collectorId = user.steamId; }
+
+      if (games.length > 0 && totalPlaytime > 0) {
+        const topGame = [...games].sort((a, b) => b.playtimeForever - a.playtimeForever)[0];
+        const ratio = topGame.playtimeForever / totalPlaytime;
+        if (ratio > maxOneTrickRatio) { maxOneTrickRatio = ratio; oneTrickId = user.steamId; }
+      }
+    }
+
+    if (tryhardId) badges[tryhardId] = "Le Tryhard";
+    if (casualId && casualId !== tryhardId) badges[casualId] = "Le Casual";
+    if (collectorId && !badges[collectorId]) badges[collectorId] = "Le Collectionneur";
+    if (oneTrickId && !badges[oneTrickId]) badges[oneTrickId] = "Le One-Trick";
+
+    // Fallback for others
+    for (const user of users) {
+       if (!badges[user.steamId]) badges[user.steamId] = "Le Polyvalent";
+    }
 
     return NextResponse.json({
       users,
-      games: gamesResult
+      games: gamesResult,
+      missingLinkGames,
+      remotePlayGames,
+      badges
     });
+
 
   } catch (error: any) {
     console.error('API /api/games error:', error);

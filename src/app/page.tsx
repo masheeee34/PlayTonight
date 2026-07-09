@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import html2canvas from 'html2canvas';
 import {
   Plus,
   Trash2,
@@ -50,7 +51,18 @@ function PlayTonightAppContent() {
   const [inputs, setInputs] = useState<string[]>(['', '']);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<{ message: string; type?: string; username?: string } | null>(null);
-  const [results, setResults] = useState<{ users: SteamUser[]; games: FilteredGameResult[] } | null>(null);
+  const [results, setResults] = useState<{ users: SteamUser[]; games: FilteredGameResult[]; missingLinkGames?: any[]; remotePlayGames?: FilteredGameResult[]; badges?: Record<string, string> } | null>(null);
+
+  const handleExportImage = async () => {
+    const dashboard = document.getElementById('export-dashboard');
+    if (!dashboard) return;
+    const canvas = await html2canvas(dashboard, { backgroundColor: '#f0f1f4', scale: 2 });
+    const link = document.createElement('a');
+    link.download = 'squad-summary.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  };
+
   
   // Navigation & filtering state
   const [activeTab, setActiveTab] = useState<'library' | 'shame' | 'stats'>('library');
@@ -453,7 +465,7 @@ function PlayTonightAppContent() {
       </div>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10 space-y-4">
+      <div id="export-dashboard" className="flex-1 flex flex-col h-full overflow-hidden relative z-10 space-y-4 p-2 -m-2">
         
         {/* TOP BAR: Squad Area */}
         <div className="bg-white rounded-[32px] p-4 flex items-center justify-between shadow-sm flex-shrink-0">
@@ -468,12 +480,17 @@ function PlayTonightAppContent() {
 
             {/* Squad Members */}
             {results ? results.users.map(u => (
-              <div key={u.steamId} className="flex flex-col items-center gap-1.5">
+              <div key={u.steamId} className="flex flex-col items-center gap-1.5 group cursor-pointer">
                 <div className="relative">
-                  <img src={u.avatarUrl} alt="" className="w-12 h-12 rounded-full shadow-sm object-cover bg-gray-100" />
+                  <img src={u.avatarUrl} alt="" className="w-12 h-12 rounded-full shadow-sm object-cover bg-gray-100 border border-transparent group-hover:border-[#6366f1] transition-all" />
                   <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 border-2 border-white"></div>
                 </div>
-                <span className="text-[10px] font-bold text-gray-800">{u.displayName.substring(0,10)}</span>
+                <div className="flex flex-col items-center">
+                  <span className="text-[10px] font-bold text-gray-800">{u.displayName.substring(0,10)}</span>
+                  {results.badges?.[u.steamId] && (
+                     <span className="text-[8px] font-black text-[#6366f1] bg-[#818cf8]/10 px-2 py-0.5 rounded-full mt-0.5 border border-[#818cf8]/20">{results.badges[u.steamId]}</span>
+                  )}
+                </div>
               </div>
             )) : inputs.filter(Boolean).map((inp, idx) => (
               <div key={idx} className="flex flex-col items-center gap-1.5">
@@ -488,6 +505,9 @@ function PlayTonightAppContent() {
           <div className="flex items-center gap-3 pr-2">
             <button onClick={handlePickForUs} disabled={isPicking || !results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm disabled:opacity-50">
               <Shuffle className="w-4 h-4" /> Pick for us
+            </button>
+            <button onClick={handleExportImage} disabled={!results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm disabled:opacity-50">
+              <Share2 className="w-4 h-4" /> Export
             </button>
             <button onClick={() => handleSpamDiscord()} disabled={!results} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm shadow-[#6366f1]/20 disabled:opacity-50">
               <MessageSquareShare className="w-4 h-4" /> Discord
@@ -536,6 +556,51 @@ function PlayTonightAppContent() {
                  <h2 className="text-gray-400 font-bold text-xl">Aucun jeu sélectionné</h2>
                  <p className="text-gray-400 text-sm">Ajoutez des profils Steam en haut pour commencer.</p>
               </div>
+            )}
+
+            
+            {/* VIRAL FEATURES */}
+            {results && (((results.missingLinkGames?.length ?? 0) > 0) || ((results.remotePlayGames?.length ?? 0) > 0)) && (
+               <div className="flex flex-col gap-4 flex-shrink-0 mb-4">
+                 {results.missingLinkGames && results.missingLinkGames.length > 0 && (
+                   <div className="bg-white rounded-[32px] p-6 shadow-sm border-l-4 border-l-[#6366f1] relative overflow-hidden">
+                     <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2">Le Maillon Faible</h3>
+                        {results.missingLinkGames[0].price && (
+                           <span className="bg-[#818cf8]/10 text-[#6366f1] px-3 py-1 rounded-xl text-sm font-black border border-[#818cf8]/20">
+                             {results.missingLinkGames[0].price.final_formatted}
+                           </span>
+                        )}
+                     </div>
+                     <p className="text-sm font-medium text-gray-500 mb-4">
+                       Si <b>{results.missingLinkGames[0].missingUsers[0].displayName}</b> achète ce jeu, vous pourrez tous jouer ensemble ce soir ! Mettez-lui la pression.
+                     </p>
+                     <div className="flex items-center gap-4 bg-gray-50 p-3 rounded-2xl">
+                        <img src={results.missingLinkGames[0].coverUrl} className="w-16 h-8 object-cover rounded-lg shadow-sm" />
+                        <span className="font-bold text-gray-800 text-sm flex-1">{results.missingLinkGames[0].name}</span>
+                        <a href={`steam://store/${results.missingLinkGames[0].appId}`} className="bg-[#0f172a] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-black transition-colors">
+                          Ouvrir Steam
+                        </a>
+                     </div>
+                   </div>
+                 )}
+
+                 {results.remotePlayGames && results.remotePlayGames.length > 0 && (
+                   <div className="bg-white rounded-[32px] p-6 shadow-sm border-l-4 border-l-emerald-400 relative overflow-hidden">
+                     <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2 mb-2">Hack "Remote Play"</h3>
+                     <p className="text-sm font-medium text-gray-500 mb-4">
+                       C'est gratuit ! Il suffit qu'<b>une seule personne</b> lance ce jeu pour inviter toute la Squad gratuitement.
+                     </p>
+                     <div className="flex items-center gap-4 bg-emerald-50 p-3 rounded-2xl">
+                        <img src={results.remotePlayGames[0].coverUrl} className="w-16 h-8 object-cover rounded-lg shadow-sm" />
+                        <span className="font-bold text-gray-800 text-sm flex-1">{results.remotePlayGames[0].name}</span>
+                        <a href={`steam://run/${results.remotePlayGames[0].appId}`} className="bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-emerald-600 transition-colors">
+                          Lancer
+                        </a>
+                     </div>
+                   </div>
+                 )}
+               </div>
             )}
 
             {/* LOWER STATS / GRAPHS ROW */}

@@ -181,7 +181,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 /**
  * Checks if a single game is multiplayer by querying Steam Store API, using cache if available.
  */
-export async function checkGameMultiplayer(appId: number, gameName: string): Promise<{ isMultiplayer: boolean; categories: string[] }> {
+export async function checkGameMultiplayer(appId: number, gameName: string): Promise<{ isMultiplayer: boolean; categories: string[]; price?: any }> {
   // 1. Check cache first
   const cached = await getGameFromCache(appId);
   if (cached) {
@@ -189,7 +189,7 @@ export async function checkGameMultiplayer(appId: number, gameName: string): Pro
   }
 
   // 2. Fetch from Steam Store API
-  const storeUrl = `https://store.steampowered.com/api/appdetails?appids=${appId}&filters=categories&l=french`;
+  const storeUrl = `https://store.steampowered.com/api/appdetails?appids=${appId}&filters=categories,price_overview&l=french`;
   
   try {
     const res = await fetch(storeUrl);
@@ -206,17 +206,20 @@ export async function checkGameMultiplayer(appId: number, gameName: string): Pro
     const data = await res.json();
     const gameData = data?.[appId];
 
+    
     if (gameData?.success && gameData?.data) {
       const categoriesList: any[] = gameData.data.categories || [];
       const categories = categoriesList.map((c) => c.description);
+      const price = gameData.data.price_overview; // ADDED
       
       // Determine if it matches any multiplayer category
       const isMultiplayer = categories.some((c) => MULTIPLAYER_CATEGORIES.has(c));
 
       // Save to cache
       await saveGameToCache(appId, gameName, isMultiplayer, categories);
-      return { isMultiplayer, categories };
+      return { isMultiplayer, categories, price }; // ADDED
     } else {
+
       // Game details not found or failed success check (e.g. game removed from store or DLC/bundle type)
       // We'll cache as false to avoid repeated calls
       await saveGameToCache(appId, gameName, false, []);
@@ -237,8 +240,8 @@ export async function checkGameMultiplayer(appId: number, gameName: string): Pro
  */
 export async function filterMultiplayerGames(
   games: { appId: number; name: string }[]
-): Promise<Map<number, { isMultiplayer: boolean; categories: string[] }>> {
-  const results = new Map<number, { isMultiplayer: boolean; categories: string[] }>();
+): Promise<Map<number, { isMultiplayer: boolean; categories: string[]; price?: any }>> {
+  const results = new Map<number, { isMultiplayer: boolean; categories: string[]; price?: any }>();
   
   // To avoid hammering Steam, we will do sequential requests with a delay for cache misses.
   // Cache hits will be instant.

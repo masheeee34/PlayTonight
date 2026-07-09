@@ -17,6 +17,56 @@
     ],
     "lastUpdated": 1783614905474
   },
+  "30": {
+    "appId": 30,
+    "name": "Day of Defeat",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619314454
+  },
+  "40": {
+    "appId": 40,
+    "name": "Deathmatch Classic",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en écran partagé",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Option clavier uniquement",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619327700
+  },
+  "60": {
+    "appId": 60,
+    "name": "Ricochet",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Contrôle du volume différencié",
+      "Option clavier uniquement",
+      "Son stéréo",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619329202
+  },
   "80": {
     "appId": 80,
     "name": "Counter-Strike: Condition Zero",
@@ -49,6 +99,137 @@
     ],
     "lastUpdated": 1783614906362
   },
+  "220": {
+    "appId": 220,
+    "name": "Half-Life 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Workshop Steam",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "Inclut le SDK Source",
+      "Commentaires disponibles",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play Together",
+      "Partage familial",
+      "Timeline Steam"
+    ],
+    "lastUpdated": 1783619329657
+  },
+  "240": {
+    "appId": 240,
+    "name": "Counter-Strike: Source",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "Antitriche Valve activée",
+      "Statistiques",
+      "Inclut le SDK Source",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619328120
+  },
+  "320": {
+    "appId": 320,
+    "name": "Half-Life 2: Deathmatch",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Contrôle du volume différencié",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Son multicanal",
+      "Antitriche Valve activée",
+      "Inclut le SDK Source",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619329885
+  },
+  "360": {
+    "appId": 360,
+    "name": "Half-Life Deathmatch: Source",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Son multicanal",
+      "Antitriche Valve activée",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619330346
+  },
+  "550": {
+    "appId": 550,
+    "name": "Left 4 Dead 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Workshop Steam",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Son multicanal",
+      "Steam Cloud",
+      "Antitriche Valve activée",
+      "Statistiques",
+      "Inclut le SDK Source",
+      "Commentaires disponibles",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Remote Play Together",
+      "Partage familial",
+      "Timeline Steam"
+    ],
+    "lastUpdated": 1783619308911
+  },
   "730": {
     "appId": 730,
     "name": "Counter-Strike 2",
@@ -75,6 +256,123 @@
     ],
     "lastUpdated": 1783614906786
   },
+  "4000": {
+    "appId": 4000,
+    "name": "Garry's Mod",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Workshop Steam",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Sauvegarde à tout moment",
+      "Son stéréo",
+      "Steam Cloud",
+      "Antitriche Valve activée",
+      "Éditeur de niveau inclus",
+      "Inclut le SDK Source",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619307499
+  },
+  "12200": {
+    "appId": 12200,
+    "name": "Bully: Scholarship Edition",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Compat. contrôleurs partielle",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619328663
+  },
+  "40990": {
+    "appId": 40990,
+    "name": "Mafia",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619330774
+  },
+  "45760": {
+    "appId": 45760,
+    "name": "Ultra Street Fighter IV",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en écran partagé",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Classements Steam",
+      "Remote Play sur télévision",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619325097
+  },
+  "49520": {
+    "appId": 49520,
+    "name": "Borderlands 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619321976
+  },
+  "107410": {
+    "appId": 107410,
+    "name": "Arma 3",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Workshop Steam",
+      "Statistiques",
+      "Classements Steam",
+      "Éditeur de niveau inclus",
+      "Timeline Steam"
+    ],
+    "lastUpdated": 1783619314882
+  },
   "108600": {
     "appId": 108600,
     "name": "Project Zomboid",
@@ -97,6 +395,444 @@
       "Partage familial"
     ],
     "lastUpdated": 1783614907199
+  },
+  "218620": {
+    "appId": 218620,
+    "name": "PAYDAY 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Prise en charge des contrôleurs suivis",
+      "VR prise en charge",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Steam Cloud",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619319310
+  },
+  "221100": {
+    "appId": 221100,
+    "name": "DayZ",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Steam Cloud",
+      "Antitriche Valve activée"
+    ],
+    "lastUpdated": 1783619305959
+  },
+  "227300": {
+    "appId": 227300,
+    "name": "Euro Truck Simulator 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Option clavier uniquement",
+      "Jouable sans saisie en temps imparti",
+      "Sauvegarde à tout moment",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Son multicanal",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Éditeur de niveau inclus",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619315715
+  },
+  "242760": {
+    "appId": 242760,
+    "name": "The Forest",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Prise en charge des contrôleurs suivis",
+      "VR prise en charge",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619307956
+  },
+  "244210": {
+    "appId": 244210,
+    "name": "Assetto Corsa",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Succès Steam",
+      "VR prise en charge",
+      "Compat. contrôleurs partielle",
+      "Classements Steam",
+      "Éditeur de niveau inclus",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619313170
+  },
+  "251570": {
+    "appId": 251570,
+    "name": "7 Days to Die",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Éditeur de niveau inclus",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619324258
+  },
+  "252490": {
+    "appId": 252490,
+    "name": "Rust",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Achats en jeu",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Antitriche Valve activée",
+      "Statistiques",
+      "Remote Play sur tablette"
+    ],
+    "lastUpdated": 1783619305530
+  },
+  "271590": {
+    "appId": 271590,
+    "name": "Grand Theft Auto V Legacy",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision"
+    ],
+    "lastUpdated": 1783619303209
+  },
+  "299740": {
+    "appId": 299740,
+    "name": "Miscreated",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Antitriche Valve activée"
+    ],
+    "lastUpdated": 1783619313583
+  },
+  "302310": {
+    "appId": 302310,
+    "name": "Dungeon of Elements",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Statistiques",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619331207
+  },
+  "304050": {
+    "appId": 304050,
+    "name": "Trove",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Achats en jeu",
+      "Taille de texte réglable",
+      "Contrôle du volume différencié",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Compat. contrôleurs partielle"
+    ],
+    "lastUpdated": 1783619324692
+  },
+  "304390": {
+    "appId": 304390,
+    "name": "FOR HONOR",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Compat. contrôleurs partielle"
+    ],
+    "lastUpdated": 1783619331629
+  },
+  "304930": {
+    "appId": 304930,
+    "name": "Unturned",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Achats en jeu",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Steam Cloud",
+      "Antitriche Valve activée",
+      "Statistiques",
+      "Éditeur de niveau inclus",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619325982
+  },
+  "312660": {
+    "appId": 312660,
+    "name": "Sniper Elite 4",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Classements Steam",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619320177
+  },
+  "346110": {
+    "appId": 346110,
+    "name": "ARK: Survival Evolved",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "MMO",
+      "Coopération",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Workshop Steam",
+      "Steam Cloud",
+      "Antitriche Valve activée",
+      "Éditeur de niveau inclus",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619304511
+  },
+  "359550": {
+    "appId": 359550,
+    "name": "Tom Clancy's Rainbow Six Siege",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette"
+    ],
+    "lastUpdated": 1783619303638
+  },
+  "365590": {
+    "appId": 365590,
+    "name": "Tom Clancy's The Division",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Achats en jeu"
+    ],
+    "lastUpdated": 1783619309809
+  },
+  "381210": {
+    "appId": 381210,
+    "name": "Dead by Daylight",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619318856
+  },
+  "393380": {
+    "appId": 393380,
+    "name": "Squad",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Compat. contrôleurs partielle",
+      "Antitriche Valve activée"
+    ],
+    "lastUpdated": 1783619316644
+  },
+  "407530": {
+    "appId": 407530,
+    "name": "ARK: Survival Of The Fittest",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Coopération",
+      "Workshop Steam",
+      "Compat. contrôleurs partielle",
+      "Statistiques",
+      "Classements Steam",
+      "Éditeur de niveau inclus",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619332056
   },
   "431960": {
     "appId": 431960,
@@ -132,6 +868,338 @@
     ],
     "lastUpdated": 1783614908085
   },
+  "460930": {
+    "appId": 460930,
+    "name": "Tom Clancy's Ghost Recon® Wildlands",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Compat. contrôleurs partielle"
+    ],
+    "lastUpdated": 1783619308450
+  },
+  "468490": {
+    "appId": 468490,
+    "name": "Neon Space",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619332546
+  },
+  "489630": {
+    "appId": 489630,
+    "name": "Warhammer 40,000: Gladius - Relics of War",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "JcJ en écran partagé",
+      "Coopération",
+      "Coopération en ligne",
+      "Coop en LAN",
+      "Coop locale et écran partagé",
+      "Écran partagé",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Remote Play Together",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619332965
+  },
+  "508180": {
+    "appId": 508180,
+    "name": "Fly and Destroy",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619333462
+  },
+  "518790": {
+    "appId": 518790,
+    "name": "theHunter: Call of the Wild™",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Achats en jeu",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619325533
+  },
+  "524440": {
+    "appId": 524440,
+    "name": "Tom Clancy's The Division PTS",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619333926
+  },
+  "536220": {
+    "appId": 536220,
+    "name": "The Walking Dead: A New Frontier",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619320640
+  },
+  "552500": {
+    "appId": 552500,
+    "name": "Warhammer: Vermintide 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619327240
+  },
+  "556280": {
+    "appId": 556280,
+    "name": "Neon Prism",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619334340
+  },
+  "578080": {
+    "appId": 578080,
+    "name": "PUBG: BATTLEGROUNDS",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Contrôle du volume différencié",
+      "Son stéréo",
+      "Son multicanal",
+      "Compat. contrôleurs partielle",
+      "Statistiques",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619304058
+  },
+  "582660": {
+    "appId": 582660,
+    "name": "Black Desert",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Compat. contrôleurs partielle"
+    ],
+    "lastUpdated": 1783619334810
+  },
+  "611790": {
+    "appId": 611790,
+    "name": "House Party",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Sous-titres disponibles",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619309340
+  },
+  "613100": {
+    "appId": 613100,
+    "name": "House Flipper",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Steam Cloud",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619335253
+  },
+  "623990": {
+    "appId": 623990,
+    "name": "Tom Clancy's Rainbow Six Siege - Test Server",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619335667
+  },
+  "654310": {
+    "appId": 654310,
+    "name": "For Honor - Public Test",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619336084
+  },
+  "704850": {
+    "appId": 704850,
+    "name": "Thief Simulator",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619326814
+  },
+  "739630": {
+    "appId": 739630,
+    "name": "Phasmophobia",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Prise en charge des contrôleurs suivis",
+      "VR prise en charge",
+      "Cartes à échanger Steam",
+      "Caméra et confort de vue",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Son stéréo",
+      "Son multicanal",
+      "Steam Cloud",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619322982
+  },
+  "740130": {
+    "appId": 740130,
+    "name": "Tales of ARISE",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge de l'API Steam Input",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619323389
+  },
+  "774941": {
+    "appId": 774941,
+    "name": "Squad - Public Testing",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619336556
+  },
+  "834910": {
+    "appId": 834910,
+    "name": "ATLAS",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Compat. contrôleurs complète",
+      "Workshop Steam",
+      "Éditeur de niveau inclus",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619310240
+  },
+  "863550": {
+    "appId": 863550,
+    "name": "HITMAN™ 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette",
+      "Remote Play sur télévision",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619326395
+  },
+  "912290": {
+    "appId": 912290,
+    "name": "Miscreated: Experimental Server",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619336999
+  },
   "931180": {
     "appId": 931180,
     "name": "Conan Exiles - Public Beta Client",
@@ -148,6 +1216,216 @@
     ],
     "lastUpdated": 1783614908521
   },
+  "990080": {
+    "appId": 990080,
+    "name": "Hogwarts Legacy",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Achats en jeu",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Menus de jeu narrés",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Son stéréo",
+      "Son multicanal",
+      "Steam Cloud",
+      "HDR disponible",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619306408
+  },
+  "1136160": {
+    "appId": 1136160,
+    "name": "Internet Cafe Simulator",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619337442
+  },
+  "1144200": {
+    "appId": 1144200,
+    "name": "Ready or Not",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Steam Cloud"
+    ],
+    "lastUpdated": 1783619310884
+  },
+  "1151340": {
+    "appId": 1151340,
+    "name": "Fallout 76",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "MMO",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Achats en jeu",
+      "Conversion de la parole en texte (chat)",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Son multicanal",
+      "Compat. contrôleurs partielle",
+      "Remote Play sur tablette"
+    ],
+    "lastUpdated": 1783619321502
+  },
+  "1238840": {
+    "appId": 1238840,
+    "name": "Battlefield™ 1",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "HDR disponible"
+    ],
+    "lastUpdated": 1783619319753
+  },
+  "1252560": {
+    "appId": 1252560,
+    "name": "Love Breakout",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619337913
+  },
+  "1265920": {
+    "appId": 1265920,
+    "name": "Life is Strange Remastered",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Contrôle du volume différencié",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619314016
+  },
+  "1265930": {
+    "appId": 1265930,
+    "name": "Life is Strange: Before the Storm Remastered",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619317557
+  },
+  "1295660": {
+    "appId": 1295660,
+    "name": "Sid Meier's Civilization VII",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "JcJ en LAN",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Conversion du texte en parole (chat)",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Option souris uniquement",
+      "Menus de jeu narrés",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Son multicanal",
+      "Option tactile uniquement",
+      "HDR disponible",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619338361
+  },
+  "1334010": {
+    "appId": 1334010,
+    "name": "Last Room",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Cartes à échanger Steam",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619338799
+  },
+  "1361210": {
+    "appId": 1361210,
+    "name": "Warhammer 40,000: Darktide",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Sous-titres disponibles",
+      "Achats en jeu",
+      "Compat. contrôleurs partielle",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619318404
+  },
   "1422450": {
     "appId": 1422450,
     "name": "Deadlock",
@@ -156,6 +1434,217 @@
       "Multijoueur"
     ],
     "lastUpdated": 1783614908946
+  },
+  "1511630": {
+    "appId": 1511630,
+    "name": "TrackDayR",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Classements Steam",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619315298
+  },
+  "1517290": {
+    "appId": 1517290,
+    "name": "Battlefield™ 2042",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Son stéréo",
+      "Son multicanal",
+      "HDR disponible"
+    ],
+    "lastUpdated": 1783619311338
+  },
+  "1623730": {
+    "appId": 1623730,
+    "name": "Palworld",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "Coopération",
+      "Coopération en ligne",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Workshop Steam",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619311774
+  },
+  "1627720": {
+    "appId": 1627720,
+    "name": "Lies of P",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Manette recommandée",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Son stéréo",
+      "Son multicanal",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619339272
+  },
+  "1789480": {
+    "appId": 1789480,
+    "name": "Marauders",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne"
+    ],
+    "lastUpdated": 1783619321057
+  },
+  "1824220": {
+    "appId": 1824220,
+    "name": "Chivalry 2",
+    "isMultiplayer": true,
+    "categories": [
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Multijoueur multiplateforme",
+      "Succès Steam",
+      "Cartes à échanger Steam",
+      "Achats en jeu",
+      "Compat. contrôleurs partielle"
+    ],
+    "lastUpdated": 1783619317984
+  },
+  "1836200": {
+    "appId": 1836200,
+    "name": "Fallout 76 Public Test Server",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619339748
+  },
+  "1874000": {
+    "appId": 1874000,
+    "name": "Life is Strange: Double Exposure",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Jouable sans saisie en temps imparti",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619312731
+  },
+  "1902960": {
+    "appId": 1902960,
+    "name": "Lost Records: Bloom & Rage",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619322429
+  },
+  "2420110": {
+    "appId": 2420110,
+    "name": "Horizon Forbidden West™ Complete Edition",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "HDR disponible",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619316162
+  },
+  "2456740": {
+    "appId": 2456740,
+    "name": "inZOI",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Compat. contrôleurs partielle",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619312218
   },
   "2567870": {
     "appId": 2567870,
@@ -173,5 +1662,89 @@
       "Partage familial"
     ],
     "lastUpdated": 1783614909366
+  },
+  "2624870": {
+    "appId": 2624870,
+    "name": "Life is Strange: Reunion",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Cartes à échanger Steam",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Option clavier uniquement",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619317076
+  },
+  "2651280": {
+    "appId": 2651280,
+    "name": "Marvel's Spider-Man 2",
+    "isMultiplayer": false,
+    "categories": [
+      "Solo",
+      "Succès Steam",
+      "Compat. contrôleurs complète",
+      "Taille de texte réglable",
+      "Caméra et confort de vue",
+      "Alternatives de couleurs",
+      "Contrôle du volume différencié",
+      "Difficulté ajustable",
+      "Menus de jeu narrés",
+      "Jouable sans saisie en temps imparti",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DUALSHOCK 4",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Sauvegarde à tout moment",
+      "Prise en charge de l'API Steam Input",
+      "Son stéréo",
+      "Options de sous-titres",
+      "Son multicanal",
+      "Steam Cloud",
+      "HDR disponible",
+      "Partage familial"
+    ],
+    "lastUpdated": 1783619307022
+  },
+  "3081410": {
+    "appId": 3081410,
+    "name": "Battlefield™ 6 Open Beta",
+    "isMultiplayer": false,
+    "categories": [],
+    "lastUpdated": 1783619323796
+  },
+  "3240220": {
+    "appId": 3240220,
+    "name": "Grand Theft Auto V Enhanced",
+    "isMultiplayer": true,
+    "categories": [
+      "Solo",
+      "Multijoueur",
+      "PvP",
+      "JcJ en ligne",
+      "Coopération",
+      "Coopération en ligne",
+      "Succès Steam",
+      "Achats en jeu",
+      "Prise en charge des manettes DualSense",
+      "Prise en charge des manettes DualSense",
+      "Compat. contrôleurs partielle",
+      "Remote Play sur téléphone",
+      "Remote Play sur tablette"
+    ],
+    "lastUpdated": 1783619304958
   }
 }
