@@ -147,7 +147,7 @@ function PlayTonightAppContent() {
     const activeProfiles = profilesToSearch.map(p => p.trim()).filter(Boolean);
 
     if (activeProfiles.length < 2) {
-      setError({ message: 'Veuillez entrer au moins 2 profils Steam pour comparer.' });
+      setError({ message: 'Please enter at least 2 Steam profiles to compare.' });
       return;
     }
 
@@ -169,7 +169,7 @@ function PlayTonightAppContent() {
 
       if (!res.ok) {
         setError({
-          message: data.error || 'Une erreur inconnue est survenue.',
+          message: data.error || 'An unknown error occurred.',
           type: data.type,
           username: data.username
         });
@@ -233,7 +233,7 @@ function PlayTonightAppContent() {
 
   const handleDeleteSquad = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (confirm('Voulez-vous vraiment supprimer cette squad de votre liste ?')) {
+    if (confirm('Are you sure you want to delete this squad from your list?')) {
       const updated = squads.filter(s => s.id !== id);
       setSquads(updated);
       if (activeSquadId === id) {
@@ -331,12 +331,12 @@ function PlayTonightAppContent() {
     const selected = game || pickedGame || getFilteredGames()[0];
 
     if (!selected) {
-      text = `@here Les gars, venez sur PlayTonight comparer nos bibliothèques Steam ! On trouve nos jeux en commun ce soir.\n${window.location.href}`;
+      text = `@here Guys, come to PlayTonight and compare our Steam libraries! Let's find our common games tonight.\n${window.location.href}`;
     } else {
       const totalPlaytime = Object.values(selected.playtimes).reduce((a, b) => a + b, 0);
       
       if (totalPlaytime === 0) {
-        text = `@here Ce soir on vide notre Pile de la Honte ! On installe tous **${selected.name}** (0 minute de jeu pour tout le monde). Faut le rentabiliser !`;
+        text = `@here Tonight we clear our Pile of Shame! Everyone install **${selected.name}** (0 minutes played for everyone). Let's make it worth it!`;
       } else {
         let maxHours = -1;
         let carryName = '';
@@ -351,9 +351,9 @@ function PlayTonightAppContent() {
         const carryHours = Math.round(maxHours / 60);
 
         if (carryHours > 30) {
-          text = `@here Ce soir on lance **${selected.name}** ! Pas d'excuses, on l'a tous. En plus, **${carryName}** va nous carry (il a déjà ${carryHours}h dessus).`;
+          text = `@here Tonight we play **${selected.name}**! No excuses, we all have it. Plus, **${carryName}** will carry us (already has ${carryHours}h on it).`;
         } else {
-          text = `@here Ce soir on lance **${selected.name}** ! On a le jeu en commun, pas d'excuses, installez-le.`;
+          text = `@here Tonight we play **${selected.name}**! We all have the game, no excuses, install it.`;
         }
       }
     }
@@ -463,7 +463,7 @@ function PlayTonightAppContent() {
         </div>
 
         <div className="flex flex-col gap-6 items-center w-full">
-          <button onClick={handleCreateNewSquad} className="p-3 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 transition-all" title="Sauvegarder">
+          <button onClick={handleCreateNewSquad} className="p-3 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 transition-all" title="Save">
             <Save className="w-6 h-6" />
           </button>
         </div>
@@ -534,7 +534,7 @@ function PlayTonightAppContent() {
                 <div className="absolute inset-0 p-10 flex flex-col justify-center max-w-md">
                   <h2 className="text-white text-5xl font-black leading-tight mb-4 drop-shadow-lg">{pickedGame.name}</h2>
                   <p className="text-white/80 text-sm font-medium mb-8 line-clamp-3">
-                    Préparez-vous à lancer ce jeu avec votre squad ce soir. Appuyez sur le bouton vert pour lancer directement depuis Steam.
+                    Get ready to launch this game with your squad tonight. Press the button to launch directly from Steam.
                   </p>
                   <a href={`steam://run/${pickedGame.appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-8 py-4 rounded-2xl font-black text-sm inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
                     Download Now
@@ -548,7 +548,7 @@ function PlayTonightAppContent() {
                 <div className="absolute inset-0 p-10 flex flex-col justify-center max-w-md">
                   <h2 className="text-white text-5xl font-black leading-tight mb-4 drop-shadow-lg">{results.games[0].name}</h2>
                   <p className="text-white/80 text-sm font-medium mb-8 line-clamp-3">
-                    C'est votre jeu le plus joué en commun ! Tout le monde l'a. Cliquez sur "Pick for us" pour en choisir un au hasard, ou lancez-le directement.
+                    This is your most played common game! Everyone has it. Click "Pick for us" to choose one randomly, or launch it directly.
                   </p>
                   <a href={`steam://run/${results.games[0].appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-8 py-4 rounded-2xl font-black text-sm inline-flex items-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
                     Launch Game
@@ -558,8 +558,8 @@ function PlayTonightAppContent() {
             ) : (
               <div className="relative w-full h-[360px] rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-white border border-gray-100 flex items-center justify-center flex-col gap-4">
                  <Gamepad2 className="w-16 h-16 text-gray-200" />
-                 <h2 className="text-gray-400 font-bold text-xl">Aucun jeu sélectionné</h2>
-                 <p className="text-gray-400 text-sm">Ajoutez des profils Steam en haut pour commencer.</p>
+                 <h2 className="text-gray-400 font-bold text-xl">No game selected</h2>
+                 <p className="text-gray-400 text-sm">Add Steam profiles at the top to get started.</p>
               </div>
             )}
 
@@ -618,30 +618,30 @@ function PlayTonightAppContent() {
                     <div className="flex-1 bg-gray-50 rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden">
                        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gray-200 rounded-b-2xl opacity-50"></div>
                        <span className="font-black text-2xl z-10 text-gray-800">{stats?.shameGamesCount || 0}</span>
-                       <span className="text-[10px] font-bold text-gray-400 uppercase z-10 mt-1">Pile de la Honte</span>
+                       <span className="text-[10px] font-bold text-gray-400 uppercase z-10 mt-1">Pile of Shame</span>
                     </div>
                     <div className="flex-1 bg-[#6366f1] rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-sm shadow-[#6366f1]/20">
                        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-[#4f46e5] rounded-b-2xl"></div>
                        <span className="font-black text-2xl z-10 text-[#0f172a]">{results?.games.length || 0}</span>
-                       <span className="text-[10px] font-bold text-[#0f172a]/70 uppercase z-10 mt-1">Total Jeux</span>
+                       <span className="text-[10px] font-bold text-[#0f172a]/70 uppercase z-10 mt-1">Total Games</span>
                     </div>
                  </div>
                </div>
                
                <div className="bg-white rounded-[32px] p-6 shadow-sm">
                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="font-bold text-lg text-gray-800">Top Joueur</h3>
+                    <h3 className="font-bold text-lg text-gray-800">Top Player</h3>
                  </div>
                  {stats?.addict ? (
                    <div className="flex items-center gap-4">
                       <img src={stats.addict.avatarUrl} className="w-16 h-16 rounded-2xl shadow-sm" />
                       <div>
                         <p className="font-black text-xl text-gray-800">{stats.addict.displayName}</p>
-                        <p className="text-xs font-bold text-gray-400 mt-1">{formatPlaytime(stats.userTotalTimes[stats.addict.steamId])} de jeu total</p>
+                        <p className="text-xs font-bold text-gray-400 mt-1">{formatPlaytime(stats.userTotalTimes[stats.addict.steamId])} total playtime</p>
                       </div>
                    </div>
                  ) : (
-                   <p className="text-gray-400 text-sm">Pas de données.</p>
+                   <p className="text-gray-400 text-sm">No data.</p>
                  )}
                </div>
             </div>
@@ -654,7 +654,7 @@ function PlayTonightAppContent() {
             <div className="bg-white rounded-[32px] p-6 flex-1 shadow-sm flex flex-col overflow-hidden">
               <div className="flex justify-between items-center mb-6 flex-shrink-0">
                 <h3 className="font-bold text-xl text-gray-800 w-[120px] leading-tight">
-                  {activeTab === 'library' ? 'My Games Collection' : activeTab === 'shame' ? 'Pile de la Honte' : 'Collection'}
+                  {activeTab === 'library' ? 'My Games Collection' : activeTab === 'shame' ? 'Pile of Shame' : 'Collection'}
                 </h3>
                 <div className="relative flex-1 max-w-[140px]">
                   <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -668,14 +668,14 @@ function PlayTonightAppContent() {
                     <img src={game.coverUrl} className="w-14 h-14 rounded-xl object-cover shadow-sm" />
                     <div className="ml-4 flex-1">
                       <h4 className="font-bold text-gray-800 text-sm line-clamp-1">{game.name}</h4>
-                      <p className="text-[10px] font-semibold text-gray-400 mt-0.5">{game.categories.find(c => c !== 'Solo' && c !== 'Single-player') || 'Multijoueur'}</p>
+                      <p className="text-[10px] font-semibold text-gray-400 mt-0.5">{game.categories.find(c => c !== 'Solo' && c !== 'Single-player') || 'Multiplayer'}</p>
                     </div>
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-[#6366f1] group-hover:text-[#0f172a] transition-colors">
                       <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
                 )) : (
-                  <div className="text-center p-10 text-gray-400 font-medium text-sm">Aucun jeu trouvé</div>
+                  <div className="text-center p-10 text-gray-400 font-medium text-sm">No games found</div>
                 )}
               </div>
             </div>
@@ -696,11 +696,11 @@ function PlayTonightAppContent() {
                 <div className="grid grid-cols-2 gap-3">
                    <div className="bg-[#1e293b] rounded-2xl p-4 flex flex-col justify-center items-center text-center">
                      <span className="font-black text-white text-xl">{(stats.biggestCarryGame as FilteredGameResult).name.substring(0, 10)}</span>
-                     <span className="text-[10px] font-bold text-gray-400 uppercase mt-1">Jeu Carry</span>
+                     <span className="text-[10px] font-bold text-gray-400 uppercase mt-1">Carry Game</span>
                    </div>
                    <div className="bg-[#6366f1] rounded-2xl p-4 flex flex-col justify-center items-center shadow-md shadow-[#6366f1]/20 text-center">
                      <span className="font-black text-[#0f172a] text-xl">{formatPlaytime(stats.maxGap)}</span>
-                     <span className="text-[10px] font-bold text-[#0f172a]/70 uppercase mt-1">D'avance</span>
+                     <span className="text-[10px] font-bold text-[#0f172a]/70 uppercase mt-1">Ahead</span>
                    </div>
                 </div>
               </div>
@@ -717,12 +717,12 @@ function PlayTonightAppContent() {
           <div className="fixed inset-0 bg-[#f3f4f6]/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <motion.div initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.96, opacity: 0 }} className="bg-white rounded-[32px] max-w-md w-full p-8 shadow-2xl relative border border-gray-100">
               <h3 className="font-black text-gray-800 text-2xl mb-2">Add Friends</h3>
-              <p className="text-gray-400 text-sm font-medium mb-6">Collez les liens Steam de votre squad ci-dessous.</p>
+              <p className="text-gray-400 text-sm font-medium mb-6">Paste your squad's Steam links below.</p>
               
               <div className="space-y-3 mb-8">
                 {inputs.map((input, index) => (
                   <div key={index} className="flex gap-2">
-                    <input type="text" value={input} onChange={(e) => handleInputChange(index, e.target.value)} placeholder="Steam URL ou Pseudo" className="flex-1 bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3.5 text-sm text-gray-800 font-medium focus:outline-none focus:border-[#6366f1] focus:ring-1 focus:ring-[#6366f1] transition-all" />
+                    <input type="text" value={input} onChange={(e) => handleInputChange(index, e.target.value)} placeholder="Steam URL or Username" className="flex-1 bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3.5 text-sm text-gray-800 font-medium focus:outline-none focus:border-[#6366f1] focus:ring-1 focus:ring-[#6366f1] transition-all" />
                     {inputs.length > 2 && (
                       <button onClick={() => handleRemoveInput(index)} className="w-[52px] h-[52px] flex flex-shrink-0 items-center justify-center bg-red-50 text-red-500 rounded-2xl hover:bg-red-100 transition-colors">
                         <Trash2 className="w-5 h-5" />
