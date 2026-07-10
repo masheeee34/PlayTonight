@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>PlayTonight Promo Animation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>PlayTonight Viral Promo Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -21,7 +21,7 @@
       grid-template-columns: 780px 1140px;
     }
 
-    /* Left Side: Bold Typography */
+    /* Left Panel: Kinetic Typography (French Clash Tone) */
     .left-panel {
       background: #090c15;
       border-right: 1px solid rgba(255, 255, 255, 0.05);
@@ -37,19 +37,19 @@
       left: 80px;
       right: 80px;
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(40px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
     }
     .text-slide.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
     .giant-title {
       font-size: 5.5rem;
       font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -0.04em;
+      line-height: 0.85;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
       margin-bottom: 24px;
       background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
@@ -61,15 +61,26 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .giant-title.yellow {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .giant-title.red {
+      background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .slide-desc {
-      font-size: 1.6rem;
-      color: #71717a;
+      font-size: 1.8rem;
+      color: #8e8e93;
       font-family: 'Inter', sans-serif;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 1.4;
+      letter-spacing: -0.02em;
     }
 
-    /* Right Side: Mockup Browser */
+    /* Right Panel: Browser Mockup */
     .right-panel {
       display: flex;
       align-items: center;
@@ -79,17 +90,17 @@
     }
     .browser-mockup {
       width: 1000px;
-      height: 620px;
+      height: 640px;
       background: #0f172a;
-      border-radius: 24px;
+      border-radius: 28px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8), 0 0 80px rgba(99, 102, 241, 0.08);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8), 0 0 80px rgba(99, 102, 241, 0.06);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
-      transform: scale(0.95);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.96);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .browser-header {
       height: 48px;
@@ -130,7 +141,7 @@
     .sidebar-icon {
       width: 44px;
       height: 44px;
-      border-radius: 12px;
+      border-radius: 14px;
       background: rgba(255,255,255,0.05);
       display: flex;
       align-items: center;
@@ -171,10 +182,10 @@
       align-items: center;
     }
     .add-friend-btn {
-      width: 220px;
-      height: 120px;
-      border: 2px dashed #d1d5db;
-      border-radius: 20px;
+      width: 240px;
+      height: 130px;
+      border: 2.5px dashed #d1d5db;
+      border-radius: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -190,7 +201,7 @@
       transform: scale(1.03);
     }
     .plus-icon {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
       color: #9ca3af;
     }
@@ -198,12 +209,12 @@
       color: #6366f1;
     }
 
-    /* Modal Styling */
+    /* Modal Simulator */
     .modal-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(243, 244, 246, 0.8);
-      backdrop-filter: blur(4px);
+      background: rgba(243, 244, 246, 0.85);
+      backdrop-filter: blur(5px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -217,11 +228,11 @@
       pointer-events: auto;
     }
     .modal-card {
-      width: 400px;
+      width: 420px;
       background: #ffffff;
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
       transform: scale(0.9);
       transition: transform 0.3s ease;
     }
@@ -229,25 +240,25 @@
       transform: scale(1);
     }
     .modal-title {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: #1f2937;
       margin-bottom: 8px;
     }
     .modal-desc {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #9ca3af;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .modal-input {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #e5e7eb;
+      padding: 14px 18px;
+      border: 1.5px solid #e5e7eb;
       background: #f9fafb;
-      border-radius: 12px;
+      border-radius: 16px;
       margin-bottom: 12px;
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #111827;
       outline: none;
     }
@@ -256,14 +267,14 @@
     }
     .modal-btn {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       background: #6366f1;
       color: white;
       font-weight: 800;
       border: none;
-      border-radius: 12px;
+      border-radius: 16px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     /* Dashboard Layout */
@@ -295,23 +306,23 @@
       gap: 10px;
     }
     .avatar {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: #e5e7eb;
       border: 2px solid #6366f1;
     }
     .user-name {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #1f2937;
     }
     .roulette-btn {
-      padding: 10px 16px;
+      padding: 12px 18px;
       background: #f3f4f6;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.8rem;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.85rem;
       border: none;
       display: flex;
       align-items: center;
@@ -320,15 +331,16 @@
     .roulette-btn.active-glow {
       background: #6366f1;
       color: white;
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.45);
     }
 
-    /* Common Games Card */
+    /* Common Games Card & Layout */
     .dashboard-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       flex: 1;
+      transition: transform 0.4s ease;
     }
     .grid-column {
       display: flex;
@@ -340,54 +352,59 @@
       border-radius: 24px;
       padding: 20px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1.5px solid rgba(0,0,0,0.01);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
-    .card.highlighted {
-      box-shadow: 0 0 35px rgba(99, 102, 241, 0.3);
+    .card.highlighted-purple {
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.45);
       border-color: #6366f1;
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
-    .card.green-highlighted {
-      box-shadow: 0 0 35px rgba(52, 211, 153, 0.3);
+    .card.highlighted-red {
+      box-shadow: 0 0 40px rgba(239, 68, 68, 0.45);
+      border-color: #ef4444;
+      transform: scale(1.03);
+    }
+    .card.highlighted-green {
+      box-shadow: 0 0 40px rgba(52, 211, 153, 0.45);
       border-color: #34d399;
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
     .card-title {
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #1f2937;
       margin-bottom: 6px;
     }
     .card-subtitle {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #9ca3af;
       margin-bottom: 14px;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .game-item {
       display: flex;
       align-items: center;
       gap: 12px;
       background: #f9fafb;
-      padding: 10px;
-      border-radius: 16px;
+      padding: 12px;
+      border-radius: 18px;
     }
     .game-cover {
-      width: 70px;
-      height: 38px;
-      border-radius: 8px;
+      width: 76px;
+      height: 40px;
+      border-radius: 10px;
       background: #d1d5db;
-      object-cover: cover;
+      object-fit: cover;
     }
     .game-name {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #374151;
     }
 
-    /* Simulated Mouse Cursor */
+    /* Simulated OS Cursor */
     #simulated-cursor {
       position: absolute;
       width: 20px;
@@ -399,10 +416,10 @@
       transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
     #simulated-cursor svg {
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
     }
 
-    /* Custom Roulette Overlay */
+    /* Roulette Overlay */
     .roulette-overlay {
       position: absolute;
       inset: 0;
@@ -421,8 +438,8 @@
       pointer-events: auto;
     }
     .roulette-container {
-      width: 450px;
-      height: 120px;
+      width: 480px;
+      height: 130px;
       background: #1e293b;
       border-radius: 24px;
       border: 2px solid #6366f1;
@@ -440,10 +457,10 @@
       transition: left 4s cubic-bezier(0.1, 1, 0.1, 1);
     }
     .roulette-item {
-      width: 140px;
-      height: 80px;
+      width: 150px;
+      height: 90px;
       background: #0f172a;
-      border-radius: 16px;
+      border-radius: 18px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
@@ -454,12 +471,12 @@
     }
     .roulette-item img {
       width: 100%;
-      height: 44px;
+      height: 50px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
     .roulette-item span {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       font-weight: 700;
       color: #94a3b8;
       margin-top: 4px;
@@ -469,7 +486,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 225px;
+      left: 238px;
       width: 4px;
       background: #6366f1;
       box-shadow: 0 0 15px #6366f1;
@@ -477,8 +494,8 @@
     }
     .winner-announcement {
       margin-top: 24px;
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.5rem;
+      font-weight: 900;
       color: #6366f1;
       opacity: 0;
       transform: scale(0.9);
@@ -492,39 +509,39 @@
 </head>
 <body>
 
-  <!-- LEFT PANEL: Dynamic Text Overlay -->
+  <!-- LEFT PANEL: Kinetic Typography (French Slang) -->
   <div class="left-panel">
     <div class="text-slide active" id="slide-1">
-      <div class="giant-title">SQUAD<br>ONLINE.</div>
-      <div class="slide-desc">Tonight, everyone is connected. Ready to grind.</div>
+      <div class="giant-title">AUCUN JEU<br>EN COMMUN ?</div>
+      <div class="slide-desc">Ton pote jure qu'il a aucun jeu à lancer avec toi ?</div>
     </div>
     <div class="text-slide" id="slide-2">
-      <div class="giant-title">BUT WHAT<br>TO PLAY?</div>
-      <div class="slide-desc">We waste 45 minutes arguing about common games... Every. Single. Night.</div>
+      <div class="giant-title">COLLE VOS<br>PROFILS.</div>
+      <div class="slide-desc">Tu colles vos deux pseudos Steam sur l'app...</div>
     </div>
     <div class="text-slide" id="slide-3">
-      <div class="giant-title colored">INTRODUCING<br>PLAYTONIGHT.</div>
-      <div class="slide-desc">The ultimate tool to instantly compare Steam libraries.</div>
+      <div class="giant-title colored">ET BOOM !<br>47 JEUX !</div>
+      <div class="slide-desc">Tous vos jeux coop et multijoueur s'affichent d'un coup.</div>
     </div>
     <div class="text-slide" id="slide-4">
-      <div class="giant-title">THE MISSING<br>LINK.</div>
-      <div class="slide-desc">See who is holding the squad back & pressure them to buy.</div>
+      <div class="giant-title red">PILE DE LA<br>HONTE. 💀</div>
+      <div class="slide-desc">Sa pile de la honte : les jeux achetés mais jamais lancés (0h).</div>
     </div>
     <div class="text-slide" id="slide-5">
-      <div class="giant-title colored">REMOTE PLAY<br>TOGETHER.</div>
-      <div class="slide-desc">Only 1 person needs to own the game for the whole squad to play free.</div>
+      <div class="giant-title yellow">FORCE LE<br>RADIN. 😭</div>
+      <div class="slide-desc">L'app lui met la pression pour qu'il achète enfin le jeu manquant.</div>
     </div>
     <div class="text-slide" id="slide-6">
-      <div class="giant-title">ROULETTE<br>WHEEL.</div>
-      <div class="slide-desc">Still can't agree? Let the wheel choose the night's game.</div>
+      <div class="giant-title colored">ROULETTE<br>CHOIX.</div>
+      <div class="slide-desc">Indécis ? En un clic la roulette décide pour la soirée.</div>
     </div>
     <div class="text-slide" id="slide-7">
-      <div class="giant-title colored">PLAYTONIGHT.</div>
-      <div class="slide-desc">100% Free. No Sign Up.<br><b style="color: #ffffff;">play-tonight.vercel.app</b></div>
+      <div class="giant-title colored">PLAYTONIGHT</div>
+      <div class="slide-desc">Gratuit. Sans compte. En ligne.<br><b style="color: #ffffff;">play-tonight.vercel.app</b></div>
     </div>
   </div>
 
-  <!-- RIGHT PANEL: Fluid App Simulator -->
+  <!-- RIGHT PANEL: Browser Mockup -->
   <div class="right-panel">
     <div class="browser-mockup" id="mockup">
       
@@ -548,14 +565,14 @@
         <!-- Main Workspace -->
         <div class="main-area">
           
-          <!-- Simulated Cursor inside Browser Mockup -->
+          <!-- Simulated Cursor -->
           <div id="simulated-cursor">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.5 3V20.5L9.75 15.25H18L4.5 3Z" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"/>
             </svg>
           </div>
 
-          <!-- Setup screen with Add Friend btn -->
+          <!-- Setup screen -->
           <div class="setup-screen" id="setup-view">
             <div class="add-friend-btn" id="add-friend-btn">
               <div class="plus-icon">+</div>
@@ -563,7 +580,7 @@
             </div>
           </div>
 
-          <!-- Modal Simulator -->
+          <!-- Modal -->
           <div class="modal-overlay" id="modal-view">
             <div class="modal-card">
               <div class="modal-title">Add Friends</div>
@@ -574,7 +591,7 @@
             </div>
           </div>
 
-          <!-- Dashboard Simulator -->
+          <!-- Dashboard -->
           <div class="dashboard-screen" id="dashboard-view">
             
             <div class="dashboard-header">
@@ -593,31 +610,32 @@
               </button>
             </div>
 
-            <div class="dashboard-grid">
+            <!-- Dashboard Grid containing targeted components -->
+            <div class="dashboard-grid" id="dashboard-grid">
               
               <div class="grid-column">
-                <div class="card" id="missing-link-card">
-                  <div class="card-title">The Missing Link</div>
-                  <div class="card-subtitle">If Wednesday buys this game, you can all play together tonight!</div>
+                <div class="card" id="shame-card">
+                  <div class="card-title">Pile of Shame 💀</div>
+                  <div class="card-subtitle">Games you both own but have NEVER launched (0h played).</div>
                   <div class="game-item">
-                    <img class="game-cover" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg">
+                    <img class="game-cover" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/header.jpg">
                     <div style="display: flex; flex-direction: column;">
-                      <span class="game-name">Project Zomboid</span>
-                      <span style="font-size: 0.7rem; color: #6366f1; font-weight: 700; margin-top: 2px;">$19.99 on Steam</span>
+                      <span class="game-name">Counter-Strike 2</span>
+                      <span style="font-size: 0.7rem; color: #ef4444; font-weight: 700; margin-top: 2px;">0h Played (Shame)</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="grid-column">
-                <div class="card" id="remote-play-card">
-                  <div class="card-title">Remote Play Together</div>
-                  <div class="card-subtitle">It's free! Only one person needs to launch it to invite the whole squad.</div>
+              <div class="grid-column" style="gap: 16px;">
+                <div class="card" id="missing-link-card">
+                  <div class="card-title">The Missing Link</div>
+                  <div class="card-subtitle">If Wednesday buys this, you can all play together tonight!</div>
                   <div class="game-item">
-                    <img class="game-cover" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440900/header.jpg">
+                    <img class="game-cover" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg">
                     <div style="display: flex; flex-direction: column;">
-                      <span class="game-name">Conan Exiles</span>
-                      <span style="font-size: 0.7rem; color: #34d399; font-weight: 700; margin-top: 2px;">Free to Join</span>
+                      <span class="game-name">Project Zomboid</span>
+                      <span style="font-size: 0.7rem; color: #fbbf24; font-weight: 700; margin-top: 2px;">$19.99 on Steam</span>
                     </div>
                   </div>
                 </div>
@@ -629,11 +647,11 @@
 
           <!-- Roulette Simulation Overlay -->
           <div class="roulette-overlay" id="roulette-view">
-            <div style="font-size: 1.2rem; font-weight: 800; color: white; margin-bottom: 20px;">Choosing the night's game...</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: white; margin-bottom: 20px;">Choosing the night's game...</div>
             <div class="roulette-container">
               <div class="roulette-center-line"></div>
               <div class="roulette-track" id="roulette-track">
-                <!-- Will be dynamically filled -->
+                <!-- Filled dynamically -->
               </div>
             </div>
             <div class="winner-announcement" id="winner-text">Project Zomboid Selected! 🎮</div>
@@ -647,7 +665,7 @@
   </div>
 
   <script>
-    // Pure Javascript Simulation Engine for 60fps Fluid Video Capturing
+    // JS Simulation timeline matching the French Clash Storyboard
     const cursor = document.getElementById('simulated-cursor');
     const textSlides = document.querySelectorAll('.text-slide');
     const mockup = document.getElementById('mockup');
@@ -659,7 +677,7 @@
       });
     }
 
-    async function moveCursor(x, y, duration = 600) {
+    async function moveCursor(x, y, duration = 500) {
       return new Promise(resolve => {
         cursor.style.transition = `left ${duration}ms cubic-bezier(0.25, 1, 0.5, 1), top ${duration}ms cubic-bezier(0.25, 1, 0.5, 1)`;
         cursor.style.left = `${x}px`;
@@ -670,7 +688,7 @@
 
     async function clickAnimation() {
       return new Promise(resolve => {
-        cursor.style.transform = 'translate(0, 0) scale(0.85)';
+        cursor.style.transform = 'translate(0, 0) scale(0.8)';
         setTimeout(() => {
           cursor.style.transform = 'translate(0, 0) scale(1)';
           resolve();
@@ -678,7 +696,7 @@
       });
     }
 
-    async function typeInput(element, text, speed = 50) {
+    async function typeInput(element, text, speed = 40) {
       return new Promise(resolve => {
         let i = 0;
         element.focus();
@@ -693,7 +711,7 @@
       });
     }
 
-    // Populate Roulette Track with mock repeating games
+    // Populate Roulette track
     const games = [
       { name: "Counter-Strike 2", img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/header.jpg" },
       { name: "Conan Exiles", img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440900/header.jpg" },
@@ -708,94 +726,83 @@
       track.appendChild(div);
     }
 
-    // MAIN ANIMATION TIMELINE FOR THE RECORDING
     async function startTimeline() {
-      // 1. Scene 1: Squad Online (0s - 2.5s)
+      // 1. Scene 1: Hook (0s - 2.5s)
       setSlide(0);
       await new Promise(r => setTimeout(r, 2500));
 
-      // 2. Scene 2: But What to play? (2.5s - 5s)
+      // 2. Scene 2: Colle vos profils (2.5s - 5s)
       setSlide(1);
-      await new Promise(r => setTimeout(r, 2500));
-
-      // 3. Scene 3: Introducing PlayTonight (5s - 7.5s)
-      setSlide(2);
-      // Simultaneously move cursor to Add Friends button
       const addBtn = document.getElementById('add-friend-btn');
-      await moveCursor(230, 200, 800);
+      await moveCursor(230, 200, 600);
       addBtn.classList.add('hovered');
-      await new Promise(r => setTimeout(r, 400));
       await clickAnimation();
       addBtn.classList.remove('hovered');
 
       // Show Modal
       document.getElementById('modal-view').classList.add('active');
-      await new Promise(r => setTimeout(r, 800));
-
-      // 4. Scene 4: Typing Usernames (7.5s - 11.5s)
-      const input1 = document.getElementById('input-1');
-      await moveCursor(320, 200, 500);
-      await typeInput(input1, 'aymn', 60);
-      await new Promise(r => setTimeout(r, 300));
-
-      const input2 = document.getElementById('input-2');
-      await moveCursor(320, 260, 400);
-      await typeInput(input2, 'wednesday', 60);
       await new Promise(r => setTimeout(r, 400));
 
-      // Click scan submit
+      const input1 = document.getElementById('input-1');
+      await moveCursor(320, 200, 400);
+      await typeInput(input1, 'aymn', 50);
+
+      const input2 = document.getElementById('input-2');
+      await moveCursor(320, 260, 300);
+      await typeInput(input2, 'wednesday', 50);
+
       const scanBtn = document.getElementById('scan-submit-btn');
-      await moveCursor(320, 320, 400);
+      await moveCursor(320, 320, 450);
       await clickAnimation();
-      
+
       // Hide modal, show dashboard
       document.getElementById('modal-view').classList.remove('active');
       document.getElementById('setup-view').style.display = 'none';
       document.getElementById('dashboard-view').classList.add('active');
-      
-      // Scale mockup slightly out for better dashboard look
-      mockup.style.transform = 'scale(1)';
-      await new Promise(r => setTimeout(r, 1200));
+      mockup.style.transform = 'scale(1.02)';
+      await new Promise(r => setTimeout(r, 1000));
 
-      // 5. Scene 5: Highlight The Missing Link (11.5s - 14s)
+      // 3. Scene 3: Boom 47 Jeux! (5s - 7.5s)
+      setSlide(2);
+      await new Promise(r => setTimeout(r, 2500));
+
+      // 4. Scene 4: Pile of Shame (7.5s - 10.5s)
       setSlide(3);
-      const linkCard = document.getElementById('missing-link-card');
-      linkCard.classList.add('highlighted');
-      await moveCursor(260, 200, 600);
-      await new Promise(r => setTimeout(r, 2200));
-      linkCard.classList.remove('highlighted');
+      const shameCard = document.getElementById('shame-card');
+      shameCard.classList.add('highlighted-red');
+      await moveCursor(260, 220, 500);
+      await new Promise(r => setTimeout(r, 2500));
+      shameCard.classList.remove('highlighted-red');
 
-      // 6. Scene 6: Highlight Remote Play Together (14s - 16.5s)
+      // 5. Scene 5: Missing Link (10.5s - 13.5s)
       setSlide(4);
-      const remoteCard = document.getElementById('remote-play-card');
-      remoteCard.classList.add('green-highlighted');
-      await moveCursor(640, 200, 600);
-      await new Promise(r => setTimeout(r, 2200));
-      remoteCard.classList.remove('green-highlighted');
+      const linkCard = document.getElementById('missing-link-card');
+      linkCard.classList.add('highlighted-purple');
+      await moveCursor(640, 220, 500);
+      await new Promise(r => setTimeout(r, 2500));
+      linkCard.classList.remove('highlighted-purple');
 
-      // 7. Scene 7: Roulette Pick (16.5s - 22s)
+      // 6. Scene 6: Roulette Pick (13.5s - 19.5s)
       setSlide(5);
       const rTrigger = document.getElementById('roulette-trigger');
       rTrigger.classList.add('active-glow');
-      await moveCursor(860, 65, 600);
+      await moveCursor(860, 65, 500);
       await clickAnimation();
       rTrigger.classList.remove('active-glow');
 
-      // Trigger Roulette overlay
+      // Show Roulette track
       document.getElementById('roulette-view').classList.add('active');
-      await new Promise(r => setTimeout(r, 800));
+      await new Promise(r => setTimeout(r, 500));
 
       // Spin track (Targeting Project Zomboid)
-      // Card width (140) + gap (15) = 155px per item
-      // Land on item 17 (Project Zomboid)
-      track.style.left = `-${155 * 14 - 150}px`;
-      await new Promise(r => setTimeout(r, 4200));
+      track.style.left = `-${165 * 14 - 150}px`;
+      await new Promise(r => setTimeout(r, 4000));
 
-      // Show winner announcement
+      // Announcement
       document.getElementById('winner-text').classList.add('active');
-      await new Promise(r => setTimeout(r, 1800));
+      await new Promise(r => setTimeout(r, 1200));
 
-      // 8. Scene 8: Outro (22s - 25s)
+      // 7. Scene 7: Outro CTA (19.5s - 23s)
       setSlide(6);
       document.getElementById('roulette-view').classList.remove('active');
       mockup.style.opacity = '0.15';
@@ -805,7 +812,6 @@
       console.log('TIMELINE_FINISHED');
     }
 
-    // Auto-start timeline once fully loaded
     window.addEventListener('load', () => {
       setTimeout(startTimeline, 1000);
     });
