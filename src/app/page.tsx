@@ -440,41 +440,41 @@ function PlayTonightAppContent() {
   const filteredGames = getFilteredGames();
 
   return (
-    <div className="flex h-screen bg-[#f3f4f6] text-[#111827] overflow-hidden p-3 gap-4 font-sans">
+    <div className="flex flex-col md:flex-row h-screen bg-[#f3f4f6] text-[#111827] overflow-hidden p-2 md:p-3 gap-3 md:gap-4 font-sans">
       
       {/* ================= LEFT SIDEBAR ================= */}
-      <div className="w-[80px] md:w-[90px] bg-[#0f172a] rounded-[32px] flex flex-col items-center py-8 justify-between shadow-xl flex-shrink-0 z-20">
-        <div className="flex flex-col gap-8 items-center w-full">
-          <div className="w-12 h-12 bg-gradient-to-tr from-[#6366f1] to-[#818cf8] rounded-[18px] flex items-center justify-center shadow-lg shadow-[#6366f1]/20 cursor-pointer" onClick={() => fetchGames()}>
-            <Gamepad2 className="w-6 h-6 text-[#0f172a]" />
+      <div className="w-full h-16 md:h-full md:w-[80px] lg:w-[90px] bg-[#0f172a] rounded-b-[24px] md:rounded-[32px] flex flex-row md:flex-col items-center px-6 md:px-0 py-2 md:py-8 justify-between shadow-xl flex-shrink-0 z-20 order-last md:order-first">
+        <div className="flex flex-row md:flex-col gap-4 md:gap-8 items-center w-auto md:w-full">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-tr from-[#6366f1] to-[#818cf8] rounded-xl md:rounded-[18px] flex items-center justify-center shadow-lg shadow-[#6366f1]/20 cursor-pointer" onClick={() => fetchGames()}>
+            <Gamepad2 className="w-5 h-5 md:w-6 md:h-6 text-[#0f172a]" />
           </div>
 
-          <div className="flex flex-col gap-4 w-full px-4">
-            <button onClick={() => setActiveTab('library')} className={`p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'library' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
-              <Gamepad2 className="w-6 h-6" />
+          <div className="flex flex-row md:flex-col gap-2 md:gap-4 w-auto md:w-full px-0 md:px-4">
+            <button onClick={() => setActiveTab('library')} className={`p-2.5 md:p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'library' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
+              <Gamepad2 className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            <button onClick={() => setActiveTab('shame')} className={`p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'shame' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
-              <Ghost className="w-6 h-6" />
+            <button onClick={() => setActiveTab('shame')} className={`p-2.5 md:p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'shame' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
+              <Ghost className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            <button onClick={() => setActiveTab('stats')} className={`p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'stats' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
-              <BarChart3 className="w-6 h-6" />
+            <button onClick={() => setActiveTab('stats')} className={`p-2.5 md:p-3.5 rounded-2xl transition-all flex justify-center ${activeTab === 'stats' ? 'bg-[#6366f1] text-[#0f172a] shadow-md shadow-[#6366f1]/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
+              <BarChart3 className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 items-center w-full">
-          <button onClick={handleCreateNewSquad} className="p-3 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 transition-all" title="Save">
-            <Save className="w-6 h-6" />
+        <div className="flex flex-row md:flex-col gap-6 items-center w-auto md:w-full">
+          <button onClick={handleCreateNewSquad} className="p-2.5 md:p-3 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 transition-all" title="Save">
+            <Save className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
       </div>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div id="export-dashboard" className="flex-1 flex flex-col h-full overflow-hidden relative z-10 space-y-4 p-2 -m-2">
+      <div id="export-dashboard" className="flex-1 flex flex-col h-[calc(100vh-80px)] md:h-full overflow-y-auto md:overflow-hidden relative z-10 space-y-4 p-2 pb-20 md:pb-2 -m-2">
         
         {/* TOP BAR: Squad Area */}
-        <div className="bg-white rounded-[32px] p-4 flex items-center justify-between shadow-sm flex-shrink-0">
-          <div className="flex items-center gap-4 overflow-x-auto px-2 scrollbar-hide">
+        <div className="bg-white rounded-[24px] md:rounded-[32px] p-4 flex flex-col lg:flex-row gap-4 items-center justify-between shadow-sm flex-shrink-0">
+          <div className="flex items-center gap-4 overflow-x-auto px-2 scrollbar-hide w-full lg:w-auto">
             {/* Add Friend Button */}
             <div className="flex flex-col items-center gap-1.5 cursor-pointer group" onClick={() => setShowSaveModal(true)}>
               <div className="w-12 h-12 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 group-hover:border-[#6366f1] group-hover:text-[#6366f1] transition-all bg-gray-50">
@@ -514,59 +514,59 @@ function PlayTonightAppContent() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 pr-2">
-            <button onClick={handlePickForUs} disabled={isPicking || !results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm disabled:opacity-50">
-              <Shuffle className="w-4 h-4" /> Pick for us
+          <div className="flex items-center gap-2 w-full lg:w-auto justify-end overflow-x-auto py-1 scrollbar-hide">
+            <button onClick={handlePickForUs} disabled={isPicking || !results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50 flex-shrink-0">
+              <Shuffle className="w-3.5 h-3.5" /> Pick for us
             </button>
-            <button onClick={handleExportImage} disabled={!results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm disabled:opacity-50">
-              <Share2 className="w-4 h-4" /> Export
+            <button onClick={handleExportImage} disabled={!results} className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50 flex-shrink-0">
+              <Share2 className="w-3.5 h-3.5" /> Export
             </button>
-            <button onClick={() => handleSpamDiscord()} disabled={!results} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-5 py-3 rounded-2xl font-bold text-xs flex items-center gap-2 transition-all shadow-sm shadow-[#6366f1]/20 disabled:opacity-50">
-              <MessageSquareShare className="w-4 h-4" /> Discord
+            <button onClick={() => handleSpamDiscord()} disabled={!results} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm shadow-[#6366f1]/20 disabled:opacity-50 flex-shrink-0">
+              <MessageSquareShare className="w-3.5 h-3.5" /> Discord
             </button>
           </div>
         </div>
 
         {/* MAIN GRID */}
-        <div className="flex-1 flex gap-4 overflow-hidden">
+        <div className="flex-1 flex flex-col lg:flex-row gap-4 overflow-y-auto lg:overflow-hidden pb-12 lg:pb-0">
           
           {/* Left Column */}
-          <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-2 scrollbar-hide pb-10">
+          <div className="flex-1 flex flex-col gap-4 lg:overflow-y-auto pr-0 lg:pr-2 scrollbar-hide pb-2 lg:pb-10">
             
             {/* HERO CARD */}
             {pickedGame ? (
-              <div className="relative w-full h-[360px] rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-[#0f172a]">
+              <div className="relative w-full h-[240px] md:h-[320px] lg:h-[360px] rounded-[24px] md:rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-[#0f172a]">
                 <img src={`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${pickedGame.appId}/library_hero.jpg`} onError={(e) => { (e.target as HTMLImageElement).src = pickedGame.coverUrl; }} className="absolute inset-0 w-full h-full object-cover opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
-                <div className="absolute inset-0 p-10 flex flex-col justify-center max-w-md">
-                  <h2 className="text-white text-5xl font-black leading-tight mb-4 drop-shadow-lg">{pickedGame.name}</h2>
-                  <p className="text-white/80 text-sm font-medium mb-8 line-clamp-3">
+                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-center max-w-md">
+                  <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-2 md:mb-4 drop-shadow-lg">{pickedGame.name}</h2>
+                  <p className="text-white/80 text-sm font-medium mb-4 md:mb-8 line-clamp-3">
                     Get ready to launch this game with your squad tonight. Press the button to launch directly from Steam.
                   </p>
-                  <a href={`steam://run/${pickedGame.appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-8 py-4 rounded-2xl font-black text-sm inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
+                  <a href={`steam://run/${pickedGame.appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-black text-xs md:text-sm inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
                     Download Now
                   </a>
                 </div>
               </div>
             ) : results && results.games.length > 0 ? (
-              <div className="relative w-full h-[360px] rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-[#0f172a]">
+              <div className="relative w-full h-[240px] md:h-[320px] lg:h-[360px] rounded-[24px] md:rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-[#0f172a]">
                 <img src={`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${results.games[0].appId}/library_hero.jpg`} onError={(e) => { (e.target as HTMLImageElement).src = results.games[0].coverUrl; }} className="absolute inset-0 w-full h-full object-cover opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
-                <div className="absolute inset-0 p-10 flex flex-col justify-center max-w-md">
-                  <h2 className="text-white text-5xl font-black leading-tight mb-4 drop-shadow-lg">{results.games[0].name}</h2>
-                  <p className="text-white/80 text-sm font-medium mb-8 line-clamp-3">
+                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-center max-w-md">
+                  <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-2 md:mb-4 drop-shadow-lg">{results.games[0].name}</h2>
+                  <p className="text-white/80 text-sm font-medium mb-4 md:mb-8 line-clamp-3">
                     This is your most played common game! Everyone has it. Click "Pick for us" to choose one randomly, or launch it directly.
                   </p>
-                  <a href={`steam://run/${results.games[0].appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-8 py-4 rounded-2xl font-black text-sm inline-flex items-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
+                  <a href={`steam://run/${results.games[0].appId}`} className="bg-[#6366f1] hover:bg-[#4f46e5] text-[#0f172a] px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-black text-xs md:text-sm inline-flex items-center gap-2 transition-all shadow-lg shadow-[#6366f1]/20 w-max">
                     Launch Game
                   </a>
                 </div>
               </div>
             ) : (
-              <div className="relative w-full h-[360px] rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-white border border-gray-100 flex items-center justify-center flex-col gap-4">
-                 <Gamepad2 className="w-16 h-16 text-gray-200" />
-                 <h2 className="text-gray-400 font-bold text-xl">No game selected</h2>
-                 <p className="text-gray-400 text-sm">Add Steam profiles at the top to get started.</p>
+              <div className="relative w-full h-[240px] md:h-[320px] lg:h-[360px] rounded-[24px] md:rounded-[32px] overflow-hidden flex-shrink-0 shadow-sm bg-white border border-gray-100 flex items-center justify-center flex-col gap-4">
+                 <Gamepad2 className="w-12 h-12 md:w-16 md:h-16 text-gray-200" />
+                 <h2 className="text-gray-400 font-bold text-lg md:text-xl">No game selected</h2>
+                 <p className="text-gray-400 text-xs md:text-sm">Add Steam profiles at the top to get started.</p>
               </div>
             )}
 
@@ -616,7 +616,7 @@ function PlayTonightAppContent() {
             )}
 
             {/* LOWER STATS / GRAPHS ROW */}
-            <div className="grid grid-cols-2 gap-4 flex-shrink-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-shrink-0">
                <div className="bg-white rounded-[32px] p-6 shadow-sm">
                  <div className="flex justify-between items-center mb-6">
                     <h3 className="font-bold text-lg text-gray-800">Highlights</h3>
@@ -656,7 +656,7 @@ function PlayTonightAppContent() {
           </div>
 
           {/* Right Column */}
-          <div className="w-[380px] flex flex-col gap-4 flex-shrink-0 overflow-hidden">
+          <div className="w-full lg:w-[340px] xl:w-[380px] flex flex-col gap-4 flex-shrink-0 overflow-hidden pb-10 lg:pb-0">
             
             <div className="bg-white rounded-[32px] p-6 flex-1 shadow-sm flex flex-col overflow-hidden">
               <div className="flex justify-between items-center mb-6 flex-shrink-0">
