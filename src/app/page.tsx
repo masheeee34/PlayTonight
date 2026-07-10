@@ -592,7 +592,7 @@ function PlayTonightAppContent() {
 
                  {results.remotePlayGames && results.remotePlayGames.length > 0 && (
                    <div className="bg-white rounded-[32px] p-6 shadow-sm border-l-4 border-l-emerald-400 relative overflow-hidden">
-                     <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2 mb-2">Remote Play Hack</h3>
+                     <h3 className="font-bold text-lg text-gray-800 flex items-center gap-2 mb-2">Remote Play Together</h3>
                      <p className="text-sm font-medium text-gray-500 mb-4">
                        It's free! Only <b>one person</b> needs to launch this game to invite the whole Squad for free.
                      </p>
@@ -758,7 +758,23 @@ function PlayTonightAppContent() {
                 <AlertTriangle className="w-10 h-10 text-red-500" />
               </div>
               <h3 className="font-black text-gray-800 text-2xl mb-3">Oops!</h3>
-              <p className="text-gray-500 text-sm font-medium mb-8 leading-relaxed">{error.message}</p>
+              {error.type === 'private_profile' ? (
+                <div className="text-left">
+                  <p className="text-gray-600 text-sm font-semibold mb-4 leading-relaxed text-center">
+                    The profile of <span className="text-[#6366f1] font-black">{error.username || 'your friend'}</span> is private.
+                  </p>
+                  <div className="text-gray-500 text-xs mb-6 leading-relaxed bg-gray-50 p-4 rounded-2xl border border-gray-100/50">
+                    <p className="font-bold text-gray-700 mb-2">How to fix it (takes 10 seconds):</p>
+                    <ol className="list-decimal list-inside space-y-1.5 font-medium">
+                      <li>Go to their Steam Profile</li>
+                      <li>Click <b className="text-gray-800">Edit Profile</b> &gt; <b className="text-gray-800">Privacy Settings</b></li>
+                      <li>Set <b className="text-[#6366f1]">Game Details</b> to <b className="text-[#6366f1]">Public</b></li>
+                    </ol>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-gray-500 text-sm font-medium mb-8 leading-relaxed">{error.message}</p>
+              )}
               <button onClick={() => setError(null)} className="w-full py-4 rounded-2xl bg-[#0f172a] hover:bg-black text-white font-black text-sm transition-colors shadow-lg shadow-black/20">
                 Close
               </button>

@@ -10,7 +10,7 @@ PlayTonight is the ultimate tool for PC gaming squads. Instead of manually compa
 
 - **Instant Multiplayer Filtering**: Analyzes up to 5 Steam profiles and instantly finds games you ALL own that have multiplayer/co-op tags.
 - **The Missing Link**: Identifies highly-rated games that *almost* everyone in your squad owns (N-1), and displays the real-time Steam Store price so you can pressure the last person into buying it.
-- **Remote Play Hack**: Highlights games owned by at least one person that support "Remote Play Together", meaning the rest of the squad can join for free.
+- **Remote Play Together**: Highlights games owned by at least one person that support "Remote Play Together", meaning the rest of the squad can join for free.
 - **Squad RPG Badges**: Automatically analyzes playtime data to assign funny badges to your friends (The Tryhard, The Casual, The Collector, The One-Trick).
 - **Export to Share**: Generates a sleek, social-media-ready PNG image of your squad's dashboard to share on Discord or Twitter.
 
