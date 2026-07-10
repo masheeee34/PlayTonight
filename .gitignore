@@ -10,10 +10,13 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# demo outputs and recordings
-/demo/output/
-/demo/videos/
-/demo/videos_landscape/
+# demo folder and video artifacts
+/demo/
+/public/promo_video.mov
+/public/promo_video_vertical.mp4
+/public/promo_video_16_9.mp4
+/public/promo_animation.html
+/public/promo_vertical.html
 
 # testing
 /coverage
