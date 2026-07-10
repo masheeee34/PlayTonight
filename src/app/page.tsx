@@ -483,11 +483,18 @@ function PlayTonightAppContent() {
               <span className="text-[10px] font-bold text-gray-400 group-hover:text-gray-700">Add Friends</span>
             </div>
 
-            {/* Squad Members */}
+             {/* Squad Members */}
             {results ? results.users.map(u => (
               <div key={u.steamId} className="flex flex-col items-center gap-1.5 group cursor-pointer">
                 <div className="relative">
-                  <img src={u.avatarUrl} alt="" className="w-12 h-12 rounded-full shadow-sm object-cover bg-gray-100 border border-transparent group-hover:border-[#6366f1] transition-all" />
+                  <img 
+                    src={u.avatarUrl} 
+                    alt="" 
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/bottts/svg?seed=${u.steamId}`;
+                    }}
+                    className="w-12 h-12 rounded-full shadow-sm object-cover bg-gray-100 border border-transparent group-hover:border-[#6366f1] transition-all" 
+                  />
                   <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 border-2 border-white"></div>
                 </div>
                 <div className="flex flex-col items-center">
