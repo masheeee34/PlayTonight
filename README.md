@@ -19,8 +19,6 @@ PlayTonight is the ultimate tool for PC gaming squads. Instead of manually compa
 The application is deployed and ready to use!
 **Play now at:** [https://play-tonight.vercel.app/](https://play-tonight.vercel.app/)
 
-*Note: This repository is private to protect the source code.*
-
 ## ⚙️ Tech Stack
 
 - Next.js 16 (App Router)
