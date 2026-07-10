@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Rounded dark slate background matching the sidebar theme -->
+  <rect width="32" height="32" rx="8" fill="#0b0f19" />
+  
+  <!-- Sleek neon border glow -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="url(#brandGrad)" stroke-opacity="0.25" stroke-width="1" />
+
+  <!-- Custom Gamepad Logo path -->
+  <g transform="translate(4, 4)">
+    <!-- Main controller body outline -->
+    <path d="M6 12h3M15 12h3M12 6v3M12 15v3" stroke="url(#brandGrad)" stroke-width="2" stroke-linecap="round" />
+    <path d="M6 8a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h1.5a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4zm12 0a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h1.5a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4z" stroke="url(#brandGrad)" stroke-width="2" stroke-linejoin="round" />
+  </g>
+
+  <defs>
+    <!-- Brand colors gradient matching the sidebar active tab buttons -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+</svg>
